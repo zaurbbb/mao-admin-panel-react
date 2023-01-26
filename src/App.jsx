@@ -1,12 +1,12 @@
-import Header from './components/elements/Header/Header';
-import Footer from './components/elements/Footer/Footer';
-import { publicRoutes } from './router/routes';
+import Header from "./components/elements/Header/Header";
+import Footer from "./components/elements/Footer/Footer";
+import { publicRoutes } from "./router/routes";
 import {
     BrowserRouter,
     Route,
     Routes
-} from 'react-router-dom';
-import React from 'react';
+} from "react-router-dom";
+import React from "react";
 
 function App() {
     return (

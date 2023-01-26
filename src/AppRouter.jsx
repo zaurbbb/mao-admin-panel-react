@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import {Navigate, Route, Routes} from 'react-router-dom';
+import React, { useContext } from "react";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {
     privateRoutes,
     publicRoutes
-} from './router/routes';
-import { AuthContext } from './сontext';
-import ThreeDotsLoader from './components/ui/loaders/ThreeDotsLoader/ThreeDotsLoader';
+} from "./router/routes";
+import { AuthContext } from "./сontext";
+import ThreeDotsLoader from "./components/ui/loaders/ThreeDotsLoader/ThreeDotsLoader";
 
 const AppRouter = () => {
     const {isAuth, isLoading} = useContext(AuthContext);
@@ -27,8 +27,8 @@ const AppRouter = () => {
                     )}
 
                     <Route
-                        path='*'
-                        element={<Navigate to='/posts' replace/>}
+                        path="*"
+                        element={<Navigate to="/posts" replace/>}
                     />
                 </>
                 :
@@ -41,8 +41,8 @@ const AppRouter = () => {
                         />
                     )}
                     <Route
-                        path='*'
-                        element={<Navigate to='/login' replace/>}
+                        path="*"
+                        element={<Navigate to="/login" replace/>}
                     />
                 </>
             }
