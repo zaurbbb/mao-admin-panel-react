@@ -1,4 +1,3 @@
-
 /**
 * @desc         mixins of the app.
 * @requires     variables.scss
@@ -11,7 +10,7 @@
   
     @if $raw-query {
       $query: if(
-        type-of($raw-query) == 'string',
+        type-of($raw-query) == "string",
         unquote($raw-query),
         inspect($raw-query)
       );
@@ -20,7 +19,7 @@
         @content;
       }
     } @else {
-      @error 'No value found for `#{$breakpoint}`. '
-           + 'Make sure you have passed a valid value as defined in `$breakpoints` map in variables.scss.';
+      @error "No value found for `#{$breakpoint}`. "
+           + "Make sure you have passed a valid value as defined in `$breakpoints` map in variables.scss.";
     }
   }

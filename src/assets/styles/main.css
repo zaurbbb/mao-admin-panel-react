@@ -1,0 +1,110 @@
+/**
+* @desc         set up variables.
+* @requires     none
+*/
+/**
+* @desc         overrides default bootstrap styles.
+* @requires     none
+*/
+/**
+* @desc         mixins of the app.
+* @requires     variables.scss
+*/
+/**
+* @desc         overrides default bootstrap styles.
+* @requires     variables.scss, functions.scss
+*/
+/* we are using reset ruls of bootstrap,
+if you need anything override it here 
+or add new */
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+* @desc         adds default text styles
+* @requires     variables.scss
+*/
+body {
+  line-height: normal;
+  color: #485460;
+}
+
+body,
+input,
+select,
+textarea {
+  font-family: "circular-regular", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: normal;
+  font-family: "circular-medium", sans-serif;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 18px;
+}
+
+pre,
+code {
+  font-family: Consolas, Monaco, "Lucida Console", monospace;
+}
+
+/**
+* @desc         header styles.
+* @requires     variables.scss, mixins.scss, 
+*/
+header {
+  color: red;
+  font-size: 30px;
+}
+
+/**
+* @desc         footer styles.
+* @requires     variables.scss, mixins.scss, 
+*/
+/**
+* @desc         button variants.
+* @requires     variables.scss
+*/
+.btn-cg {
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  padding: 6px 20px;
+  border-radius: 2px;
+}
+.btn-cg.white {
+  color: #1565c0;
+  background: #ffffff;
+  border-color: #d2dae2;
+}
+.btn-cg.white:hover {
+  border-color: #1565c0;
+}
+.btn-cg.round {
+  border-radius: 50px;
+}
+
+/*# sourceMappingURL=main.css.map */

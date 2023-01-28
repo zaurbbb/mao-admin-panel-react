@@ -1,32 +1,16 @@
-import Header from "./components/elements/Header/Header";
-import Footer from "./components/elements/Footer/Footer";
-import { publicRoutes } from "./router/routes";
-import {
-    BrowserRouter,
-    Route,
-    Routes
-} from "react-router-dom";
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./AppRouter";
 
-function App() {
+
+const App = () => {
     return (
-    <BrowserRouter>
-            <Header />
+        <BrowserRouter>
             <main>
-                <Routes>
-                {publicRoutes.map(route =>
-                    <Route
-                        key={route.id}
-                        element={route.component}
-                        path={route.path}
-                    />
-                )}
-                </Routes>
-                {/*<AppRouter />*/}
+                <AppRouter />
             </main>
-            <Footer />
-    </BrowserRouter>
+        </BrowserRouter>
     );
-}
+};
 
 export default App;
