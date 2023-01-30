@@ -1,24 +1,13 @@
-import React, { useEffect } from "react";
-import API from "../../../api/index";
+import React from "react";
+
+import { UsersListModule } from "../../../modules/usersModules/UsersListModule";
 
 const UsersPage = () => {
-    useEffect(() => {
-        async function fetch() {
-            try {
-                const res = await API.get(`/med/getCatalogue`);
-                console.log(res);
-            } catch (e) {
-                console.log(e)
-            }
-        }
-
-        fetch().then();
-    }, []);
-
     return (
-        <div>
-                asassaas
-        </div>
+        <>
+            <h2>Users Page</h2>
+            <UsersListModule />
+        </>
     );
 };
 

@@ -1,0 +1,1 @@
+export const serverAddress = "http://3.90.65.9/api/";

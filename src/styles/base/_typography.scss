@@ -3,6 +3,34 @@
 * @requires     variables.scss
 */
 
+@font-face {
+    font-family: 'GilroyBold';
+    src: local('GilroyBold'), url('../../assets/fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GilroySemiBold';
+    src: local('GilroySemiBold'), url('../../assets/fonts/Gilroy-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GilroyRegular';
+    src: local('GilroyRegular'), url('../../assets/fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GilroyLight';
+    src: local('GilroyLight'), url('../../assets/fonts/Gilroy-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GilroyThin';
+    src: local('GilroyThin'), url('../../assets/fonts/Gilroy-Thin.ttf') format('truetype');
+};
+
 body {
     line-height: $base-line-height;
     color: $text-primary-color;
@@ -12,7 +40,7 @@ body,
 input,
 select,
 textarea {
-    font-family: $font-family-default;
+    font-family: $font-family-regular;
 }
 
 // headings and paragraph
@@ -23,15 +51,15 @@ h4,
 h5,
 h6 {
     font-style: normal;
-    font-family: $font-family-default-m;
+    font-family: $font-family-semibold;
 }
 
 h1 {
-    font-size: $fs-xlarge;
+    font-size: $fs-large;
 }
 
 h2 {
-    font-size: $fs-large;
+    font-size: $fs-big;
 }
 
 h3,

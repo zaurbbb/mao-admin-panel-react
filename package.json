@@ -1,6 +1,7 @@
 {
   "name": "apc13",
   "version": "0.1.0",
+  "homepage": "http://192.168.56.1:3000/admin/",
   "private": true,
   "dependencies": {
     "axios": "^1.2.1",

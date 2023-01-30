@@ -6,11 +6,11 @@
 @import "base/reset",
         "base/typography";
 
-@import "layout/header",
-        "layout/footer",
-        "layout/sidebar",
-        "layout/app";
+@import "components/app",
+        "components/buttons-group",
+        "components/heading",
+        "components/icon",
+        "components/sidebar";
 
-@import "components/button",
-        "components/loader",
-        "components/icon";
+@import "ui/button",
+        "ui/loader";

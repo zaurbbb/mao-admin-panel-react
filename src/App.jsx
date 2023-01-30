@@ -7,9 +7,9 @@ import {
 
 import {
     setIsAuth,
-} from "./redux/actions/authActions";
+} from "./store/authReducer";
 
-import Sidebar from "./components/Sidebar/Sidebar";
+import SidebarComponent from "./components/SidebarComponent/SidebarComponent";
 import AppRouter from "./AppRouter";
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <Sidebar />
+            <SidebarComponent />
             <main>
                 <AppRouter />
             </main>

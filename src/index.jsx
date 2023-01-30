@@ -8,10 +8,10 @@ import { PersistGate } from "redux-persist/integration/react";
 import {
     authStore,
     persistor
-} from "./redux/store/configureAuthStore";
+} from "./store/configureAuthStore";
 
 import App from "./App";
-import Loader from "./ui/Loader/Loader";
+import Loader from "./loader/Loader";
 
 import "./styles/main.scss";
 

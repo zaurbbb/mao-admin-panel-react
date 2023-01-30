@@ -1,6 +1,8 @@
 import axios from "axios";
+import { serverAddress } from "../config/serverAddress";
+
 
 export default axios.create({
-    baseURL: `http://3.90.65.9/api/`,
+    baseURL: serverAddress,
     withCredentials: true
 });

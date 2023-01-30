@@ -1,0 +1,48 @@
+/**
+* @desc         button variants.
+* @requires     variables.scss
+*/
+
+.button {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    vertical-align: baseline;
+
+    margin: 0;
+    padding: $button-default-padding;
+
+    border-radius: 8px;
+
+    background-color: $primary-dark-color;
+    outline: none;
+
+    color: $white-color-1;
+    font-size: $fs-small;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all .1s ease-in-out;
+
+    svg {
+        @include size(50%, 50%);
+    }
+}
+
+.button:hover,
+.button:focus {
+    outline: 1px solid $border-primary-color;
+
+    background-color: $white-color-1;
+
+    color: $primary-dark-color;
+}
+

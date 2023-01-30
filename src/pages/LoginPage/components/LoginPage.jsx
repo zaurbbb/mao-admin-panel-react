@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { setIsAuth } from "../../../redux/actions/authActions";
+import { setIsAuth } from "../../../store/authReducer";
 
 const LoginPage = () => {
     const dispatch = useDispatch();

@@ -8,7 +8,7 @@ import {
 import {
     privateRoutes,
     publicRoutes
-} from "./router/routes";
+} from "./routes/routes";
 import { useSelector } from "react-redux";
 
 const AppRouter = () => {

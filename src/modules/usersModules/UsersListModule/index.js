@@ -1,0 +1,1 @@
+export { default as UsersListModule } from "./components/UsersListModule";

@@ -10,6 +10,10 @@
 * @desc         mixins of the app.
 * @requires     variables.scss
 */
+/**
+* @desc         reset styles
+* @requires     none
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
 abbr, acronym, address, big, cite, code, del,
@@ -73,6 +77,29 @@ button {
 * @desc         adds default text styles
 * @requires     variables.scss
 */
+@font-face {
+  font-family: "GilroyBold";
+  src: local("GilroyBold"), url("../../assets/fonts/Gilroy-Bold.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GilroySemiBold";
+  src: local("GilroySemiBold"), url("../../assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GilroyRegular";
+  src: local("GilroyRegular"), url("../../assets/fonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GilroyLight";
+  src: local("GilroyLight"), url("../../assets/fonts/Gilroy-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GilroyThin";
+  src: local("GilroyThin"), url("../../assets/fonts/Gilroy-Thin.ttf") format("truetype");
+}
 body {
   line-height: normal;
   color: #1565c0;
@@ -82,7 +109,7 @@ body,
 input,
 select,
 textarea {
-  font-family: "circular-regular", sans-serif;
+  font-family: "GilroyRegular", sans-serif;
 }
 
 h1,
@@ -92,85 +119,31 @@ h4,
 h5,
 h6 {
   font-style: normal;
-  font-family: "circular-medium", sans-serif;
+  font-family: "GilroySemiBold", sans-serif;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 pre,
 code {
   font-family: Consolas, Monaco, "Lucida Console", monospace;
-}
-
-/**
-* @desc         header styles.
-* @requires     variables.scss, mixins.scss, 
-*/
-header {
-  color: red;
-  font-size: 30px;
-}
-
-/**
-* @desc         footer styles.
-* @requires     variables.scss, mixins.scss, 
-*/
-/**
-* @desc         sidebar styles.
-* @requires     variables.scss
-*/
-.sidebar {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  overflow: hidden;
-  width: 4rem;
-  height: 100vh;
-  padding: 0.6rem 0;
-  background-color: #1565c0;
-}
-.sidebar__item {
-  position: relative;
-  width: 100%;
-  height: 3rem;
-}
-.sidebar__item_active::after {
-  content: "";
-  position: absolute;
-  right: -2px;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 5px;
-  height: 2rem;
-  border-top-left-radius: 80px;
-  border-bottom-left-radius: 80px;
-  background: #ffffff;
-}
-.sidebar svg {
-  width: 50%;
-  height: 50%;
-}
-.sidebar svg path {
-  fill: #ffffff;
 }
 
 /**
@@ -204,13 +177,125 @@ html {
 main {
   width: 100%;
   height: 100vh;
-  background: red;
+  padding: 1rem 1.6rem;
+}
+
+/**
+* @desc         buttons-group styles.
+* @requires     variables.scss
+*/
+.buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.buttons-group__button {
+  flex: 0 3 auto;
+}
+
+/**
+* @desc         heading styles.
+* @requires     variables.scss,
+*/
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+/**
+* @desc         icon wrapper for icons
+* @requires     none
+*/
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+}
+
+/**
+* @desc         sidebar styles.
+* @requires     variables.scss
+*/
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  overflow: hidden;
+  width: 5rem;
+  height: 100vh;
+  padding: 0.8rem 0;
+  background-color: #1565c0;
+}
+.sidebar__item {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+}
+.sidebar__item_active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 4px;
+  height: 2rem;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  background: #ffffff;
+}
+.sidebar svg {
+  width: 50%;
+  height: 50%;
+}
+.sidebar svg path {
+  fill: #ffffff;
 }
 
 /**
 * @desc         button variants.
 * @requires     variables.scss
 */
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background-color: #1565c0;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.button svg {
+  width: 50%;
+  height: 50%;
+}
+
+.button:hover,
+.button:focus {
+  outline: 1px solid #1565c0;
+  background-color: #ffffff;
+  color: #1565c0;
+}
+
 /**
 * @desc         loader.scss
 * @requires     none
@@ -230,17 +315,6 @@ main {
   to {
     transform: rotate(360deg) scale(1.5);
   }
-}
-/**
-* @desc         icon wrapper for icons
-* @requires     none
-*/
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 3rem;
 }
 
 /*# sourceMappingURL=main.css.map */

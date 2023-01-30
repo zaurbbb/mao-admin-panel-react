@@ -6,7 +6,7 @@
 // [color - variables]
 // branding
 $primary-dark-color: #1565c0;
-$primary-light-color: #def0ff;
+$primary-light-color: #f0f2f3;
 $action-dark-color: #008a00;
 $action-light-color: #02a257;
 $info-light-color: #ffc048;
@@ -32,7 +32,7 @@ $gray-color-6: #1d2b33;
 // footer
 $footer-color: $primary-dark-color;
 // inputs
-$input-backround-color: $white-color-1;
+$input-background-color: $white-color-1;
 $input-border-color: $gray-color-2;
 $input-placeholder-color: $gray-color-2;
 // body
@@ -52,8 +52,11 @@ $text-hover-color: $text-primary-color;
 $text-white-color: $white-color-1;
 
 // font family
-$font-family-default: "circular-regular", sans-serif;
-$font-family-default-m: "circular-medium", sans-serif;
+$font-family-thin: "GilroyThin", sans-serif;
+$font-family-light: "GilroyLight", sans-serif;
+$font-family-regular: "GilroyRegular", sans-serif;
+$font-family-semibold: "GilroySemiBold", sans-serif;
+$font-family-bold: "GilroyBold", sans-serif;
 $font-family-code: Consolas, Monaco, "Lucida Console", monospace;
 
 // font weights
@@ -63,10 +66,11 @@ $font-w-medium: 500;
 $font-w-semi-bold: 600;
 
 // font size
-$fs-xsmall: 0.4rem;
-$fs-small:  0.6rem;
+$fs-xxsmall: 0.4rem;
+$fs-xsmall:  0.6rem;
+$fs-small:  0.8rem;
 $fs-regular: 1rem; // -> base size
-$fs-medium: 1.5rem;
+$fs-medium: 1.6rem;
 $fs-big: 2rem;
 $fs-large: 3rem;
 $fs-xlarge: 4rem;
@@ -102,7 +106,7 @@ $xs:  360px;
 
 // [margins and paddings - variables]
 // paddings
-$button-default-padding: 6px 20px;
+$button-default-padding: $fs-xsmall $fs-regular;
 $navlink-padding-x: 0px;
 $layout-padding-y: 1.25rem;
 
