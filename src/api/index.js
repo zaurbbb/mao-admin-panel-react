@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: `https://jsonplaceholder.typicode.com/posts`,
+    baseURL: `http://3.90.65.9/ `,
     withCredentials: true
 });

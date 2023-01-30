@@ -1,6 +1,8 @@
+import { UsersPage } from "../pages/UsersPage/index";
+
 export const privateRoutes = [
     {path: "/", component: <h1>Main Page</h1>, id: 1},
-    {path: "/posts", component: <h1>Profile Page</h1>, id: 2},
+    {path: "/users", component: <UsersPage />, id: 2},
 ];
 
 // export const publicRoutes = [
