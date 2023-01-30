@@ -5,28 +5,58 @@ import {
     Routes
 } from "react-router-dom";
 
-import { privateRoutes } from "./router/routes";
+import {
+    privateRoutes,
+    publicRoutes
+} from "./router/routes";
+import { useSelector } from "react-redux";
 
 const AppRouter = () => {
+    const isAuth = useSelector(state => state.auth.isAuth);
+
     return (
         <Routes>
-            {privateRoutes.map(route =>
-                <Route
-                    key={route.id}
-                    element={route.component}
-                    path={route.path}
-                />
-            )}
+            {isAuth
+                ?
+                <>
+                    {privateRoutes.map(route =>
+                        <Route
+                            key={route.id}
+                            element={route.component}
+                            path={route.path}
+                        />
+                    )}
 
-            <Route
-                path="*"
-                element={
-                    <Navigate
-                        to="/"
-                        replace
+                    <Route
+                        path="*"
+                        element={
+                            <Navigate
+                                to="/"
+                                replace
+                            />
+                        }
                     />
-                }
-            />
+                </>
+                :
+                <>
+                    {publicRoutes.map(route =>
+                        <Route
+                            key={route.id}
+                            element={route.component}
+                            path={route.path}
+                        />
+                    )}
+                    <Route
+                        path="*"
+                        element={
+                            <Navigate
+                                to="/login"
+                                replace
+                            />
+                        }
+                    />
+                </>
+            }
         </Routes>
     );
 };

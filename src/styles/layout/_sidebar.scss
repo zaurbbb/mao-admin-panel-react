@@ -1,13 +1,52 @@
 /**
 * @desc         sidebar styles.
-* @requires     none
+* @requires     variables.scss
 */
 
 .sidebar {
+    position: relative;
+
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $fs-small;
+    overflow: hidden;
 
+    width: 4rem;
     height: 100vh;
-    width: 15%;
+    padding: $fs-small 0;
 
-    background-color: red;
+    background-color: $primary-dark-color;
+
+    &__item {
+        position: relative;
+        @include size(100%, $fs-large);
+
+        &_active {
+            &::after {
+                content: "";
+
+                position: absolute;
+                right: -2px;
+                top: 50%;
+                transform: translate(0, -50%);
+
+                width: 5px;
+                height: 2rem;
+
+                border-top-left-radius: 80px;
+                border-bottom-left-radius: 80px;
+
+                background: $white-color-1;
+            }
+        }
+    }
+
+
+    svg {
+        @include size(50%, 50%);
+        path {
+            fill: $white-color-1;
+        }
+    }
 }

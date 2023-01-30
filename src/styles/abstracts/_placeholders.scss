@@ -15,7 +15,7 @@
 }
 
 %cover-img {
-  border-radius: $border-radius-4;
+  border-radius: $border-radius-circle;
   border: 1px solid $gray-color-1;
   padding: 10px 10px;
   width: 100px;
@@ -34,6 +34,6 @@
 %note {
   padding: 15px;
   border: 1px solid $info-light-color;
-  border-radius: $border-radius-2;
+  border-radius: $border-radius-circle;
   background: rgba($info-light-color, 0.1);
 }

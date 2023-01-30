@@ -2,16 +2,17 @@
 * @desc         adds default text styles
 * @requires     variables.scss
 */
+
 body {
-  line-height: $base-line-height;
-  color: $text-default-color;
+    line-height: $base-line-height;
+    color: $text-primary-color;
 }
 
 body,
 input,
 select,
 textarea {
-  font-family: $font-family-default;
+    font-family: $font-family-default;
 }
 
 // headings and paragraph
@@ -21,28 +22,30 @@ h3,
 h4,
 h5,
 h6 {
-  font-style: normal;
-  font-family: $font-family-default-m;
+    font-style: normal;
+    font-family: $font-family-default-m;
 }
 
 h1 {
-  font-size: $font-s-xlarge;
+    font-size: $fs-xlarge;
 }
+
 h2 {
-  font-size: $font-s-large;
+    font-size: $fs-large;
 }
+
 h3,
 h4,
 h5,
 h6 {
-  font-size: $font-s-medium;
+    font-size: $fs-medium;
 }
 
 p {
-  font-size: $font-s-medium;
+    font-size: $fs-medium;
 }
 
 pre,
 code {
-  font-family: $font-family-code;
+    font-family: $font-family-code;
 }

@@ -75,7 +75,7 @@ button {
 */
 body {
   line-height: normal;
-  color: #485460;
+  color: #1565c0;
 }
 
 body,
@@ -96,22 +96,22 @@ h6 {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 3rem;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  font-size: 18px;
+  font-size: 1.5rem;
 }
 
 p {
-  font-size: 18px;
+  font-size: 1.5rem;
 }
 
 pre,
@@ -134,44 +134,113 @@ header {
 */
 /**
 * @desc         sidebar styles.
-* @requires     none
+* @requires     variables.scss
 */
 .sidebar {
+  position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  overflow: hidden;
+  width: 4rem;
   height: 100vh;
-  width: 15%;
-  background-color: red;
+  padding: 0.6rem 0;
+  background-color: #1565c0;
+}
+.sidebar__item {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+}
+.sidebar__item_active::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 5px;
+  height: 2rem;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  background: #ffffff;
+}
+.sidebar svg {
+  width: 50%;
+  height: 50%;
+}
+.sidebar svg path {
+  fill: #ffffff;
 }
 
 /**
 * @desc         app styles.
 * @requires     none
 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 25px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media (max-width: 360px) {
+  html {
+    font-size: 16px;
+  }
+}
 .app {
   display: flex;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background: red;
 }
 
 /**
 * @desc         button variants.
 * @requires     variables.scss
 */
-.btn-cg {
+/**
+* @desc         loader.scss
+* @requires     none
+*/
+.loader {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px dashed teal;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+/**
+* @desc         icon wrapper for icons
+* @requires     none
+*/
+.icon {
   display: flex;
   justify-content: center;
-  width: max-content;
-  padding: 6px 20px;
-  border-radius: 2px;
-}
-.btn-cg.white {
-  color: #1565c0;
-  background: #ffffff;
-  border-color: #d2dae2;
-}
-.btn-cg.white:hover {
-  border-color: #1565c0;
-}
-.btn-cg.round {
-  border-radius: 50px;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
 }
 
 /*# sourceMappingURL=main.css.map */

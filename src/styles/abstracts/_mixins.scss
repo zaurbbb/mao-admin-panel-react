@@ -5,6 +5,11 @@
 
 
 // responsive breakpoint manager
+@mixin size ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
 @mixin respond-to($breakpoint) {
     $raw-query: map-get($breakpoints, $breakpoint);
   

@@ -6,7 +6,7 @@
 // [color - variables]
 // branding
 $primary-dark-color: #1565c0;
-$primary-light-color: #2699fb;
+$primary-light-color: #def0ff;
 $action-dark-color: #008a00;
 $action-light-color: #02a257;
 $info-light-color: #ffc048;
@@ -63,15 +63,15 @@ $font-w-medium: 500;
 $font-w-semi-bold: 600;
 
 // font size
-$font-s-xsmall: 12px;
-$font-s-small: 14px;
-$font-s-regular: 16px; // -> base size
-$font-s-medium: 18px; 
-$font-s-big: 20px;
-$font-s-large: 22px; // ->  x size
-$font-s-xlarge: 25px; // -> xx size
-$font-s-xxlarge: 32px;
-$font-s-xxxlarge: 38px;
+$fs-xsmall: 0.4rem;
+$fs-small:  0.6rem;
+$fs-regular: 1rem; // -> base size
+$fs-medium: 1.5rem;
+$fs-big: 2rem;
+$fs-large: 3rem;
+$fs-xlarge: 4rem;
+$fs-xxlarge: 5rem;
+$fs-xxxlarge: 6rem;
 
 // inline hights
 $base-line-height: normal;
@@ -83,11 +83,8 @@ $border-primary-color: $primary-dark-color;
 $border-white-color: $white-color-1;
 
 // border radius
-$border-radius: 2px;
-$border-radius-1: 2px;
-$border-radius-2: 4px;
-$border-radius-3: 6px;
-$border-radius-4: 8px;
+$border-radius-regular: 10px;
+$border-radius-circle: 100%;
 
 // [action - variables]
 // hover
@@ -95,31 +92,19 @@ $primary-hover-color-1: rgba($primary-dark-color, 0.2);
 $primary-hover-color-2: rgba($primary-dark-color, 0.4);
 $primary-hover-color-3: rgba($primary-dark-color, 0.6);
 
-// [breakpoint - variables]
-// breakpoints
-$breakpoints: (
-  "small": (
-    min-width: 576px
-  ),
-  "medium": (
-    min-width: 768px
-  ),
-  "large": (
-    min-width: 992px
-  ),
-  "extra": (
-    min-width: 1200px
-  )
-);
+// [breakpoints - variables]
+$xxl:  1400px;
+$xl:  1200px;
+$lg:  992px;
+$md:  768px;
+$sm:  540px;
+$xs:  360px;
 
 // [margins and paddings - variables]
 // paddings
 $button-default-padding: 6px 20px;
 $navlink-padding-x: 0px;
-$card-padding-y: 1.25rem;
-$badge-p-padding-y: 8px;
-$badge-p-padding-x: 15px;
-$breadcrumb-bottom-margin: 12px;
+$layout-padding-y: 1.25rem;
 
 // [shadow - variables]
 // shadows

@@ -1,16 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import { PersistGate } from "redux-persist/integration/react";
+
+import {
+    authStore,
+    persistor
+} from "./redux/store/configureAuthStore";
 
 import App from "./App";
+import Loader from "./ui/Loader/Loader";
 
 import "./styles/main.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    // <Provider store={store}>
     <BrowserRouter>
-        <App />
+        <Provider store={authStore}>
+            <PersistGate
+                loading={<Loader />}
+                persistor={persistor}
+            >
+                <App />
+            </PersistGate>
+        </Provider>
     </BrowserRouter>
-    // </Provider>
 );

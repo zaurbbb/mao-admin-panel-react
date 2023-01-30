@@ -1,0 +1,12 @@
+/**
+* @desc         icon wrapper for icons
+* @requires     none
+*/
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include size(100%, $fs-large);
+
+}
