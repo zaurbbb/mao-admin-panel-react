@@ -13,7 +13,6 @@ const defaultState = {
 }
 
 export default function usersReducer(state, action) {
-    console.log("action.payload", action.payload);
     switch (action.type) {
         case SET_USERS:
             return {

@@ -1,11 +1,12 @@
-import { SET_AUTH } from "./authConsts";
+import { SET_IS_AUTH } from "../consts/authConsts";
 
-export const initialState = {
+const initialState = {
     isAuth: false,
 }
+
 export default function authReducer(state, action) {
     switch (action.type) {
-        case SET_AUTH:
+        case SET_IS_AUTH:
             return {
                 ...state,
                 isAuth: action.payload,
@@ -15,7 +16,3 @@ export default function authReducer(state, action) {
     }
 }
 
-export const setIsAuth = (isAuthStatus) => ({
-    type: SET_AUTH,
-    payload: isAuthStatus,
-});

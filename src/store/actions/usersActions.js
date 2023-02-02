@@ -1,9 +1,9 @@
-import API from "../../../../api";
+import API from "../../api";
 import {
     setFetchError,
     setIsFetching,
     setUsers
-} from "./usersReducer";
+} from "../reducers/usersReducer";
 
 export const getUsers = () => {
     return async (dispatch) => {
@@ -18,9 +18,9 @@ export const getUsers = () => {
             console.log("e", e)
             dispatch(setFetchError(true));
             dispatch(setIsFetching(false));
-            // setTimeout(() => {
-            //     dispatch(setFetchError(false));
-            // }, 3000);
+            setTimeout(() => {
+                dispatch(setFetchError(false));
+            }, 3000);
         }
     }
 };

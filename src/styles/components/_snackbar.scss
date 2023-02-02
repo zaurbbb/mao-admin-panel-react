@@ -1,0 +1,81 @@
+/**
+* @desc         snackbar.scss
+* @requires     variables.scss
+*/
+
+
+.snackbar {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 10;
+
+    min-width: 344px;
+    max-width: 672px;
+    margin: 16px;
+    padding: 8px;
+
+    border-radius: 4px;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+                0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+                0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+    background: #323232;
+
+    color: #fff;
+
+
+
+    &__label {
+        width: 100%;
+        margin: 0;
+        padding: 14px 8px 14px 16px;
+
+        line-height: 1.2rem;
+    }
+
+    &__dismiss {
+        color: #ae7ee9;
+        font-size: 120%;
+        font-weight: bold;
+        margin-left: 8px;
+        margin-right: 8px;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    &-open {
+        animation: 300ms ease-out slide-up;
+    }
+
+    &-close {
+        animation: 300ms ease-in slide-down;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(3rem);
+    }
+}

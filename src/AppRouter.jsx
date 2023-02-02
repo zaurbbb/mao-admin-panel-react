@@ -9,10 +9,11 @@ import {
     privateRoutes,
     publicRoutes
 } from "./routes/routes";
-import { useSelector } from "react-redux";
+import { authSelectors } from "./store/selectors/authSelectors";
+import { useAppSelector } from "./hooks/useAppSelector";
 
 const AppRouter = () => {
-    const isAuth = useSelector(state => state.auth.isAuth);
+    const {isAuth} = useAppSelector(authSelectors);
 
     return (
         <Routes>

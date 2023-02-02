@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { setIsAuth } from "../../store/authReducer";
+import { setIsAuth } from "../../store/actions/authActions";
 import navbar from "../../config/navbar";
 
 import IconWrapper from "../IconWrapperComponent/IconWrapperComponent";

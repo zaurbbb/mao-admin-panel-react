@@ -1,55 +1,31 @@
 import React, { useEffect } from "react";
-import {
-    useDispatch,
-    useSelector
-} from "react-redux";
+import { connect } from "react-redux";
 
-import { getUsers } from "../store/usersActions";
+import { getUsers } from "../../../../store/actions/usersActions";
+import { snackbarSelectors } from "../../../../store/selectors/snackbarSelectors";
+import { usersSelectors } from "../../../../store/selectors/usersSelectors";
+
+import { useAppSelector } from "../../../../hooks/useAppSelector";
+import { useAppDispatch } from "../../../../hooks/useAppDispatch";
+
 import Loader from "../../../../loader/Loader";
+import SnackbarComponent from "../../../../components/SnackbarComponent/SnackbarComponent";
 
 const UsersList = () => {
-    const dispatch = useDispatch();
-    const users = useSelector(state => state.users.items);
-    const isFetching = useSelector(state => state.users.isFetching);
-    const isFetchError = useSelector(state => state.users.isFetchError);
+    const dispatch = useAppDispatch();
+    const isSnackbarOpened = useAppSelector(snackbarSelectors);
 
-    // createPages(pages, pagesCount, currentPage);
-    //
+    const { users, isFetching, isFetchError } = useAppSelector(usersSelectors);
+
     useEffect(() => {
         dispatch(getUsers());
     }, [dispatch]);
 
-    console.log("users", users);
-    // function searchHandler() {
-    //     dispatch(setCurrentPage(1))
-    //     dispatch(getUsers(searchValue, currentPage, perPage))
-    // }
+    console.log(isSnackbarOpened);
 
     return (
         <div>
-            {isFetchError &&
-                <div
-                    className="alert alert-danger"
-                    role="alert"
-                >
-                    We've caught an error! Please, come back later
-                </div>
-            }
-            {/*<div className="search">*/}
-            {/*    <input*/}
-            {/*        value={searchValue}*/}
-            {/*        onChange={(e) => setSearchValue(e.target.value)}*/}
-            {/*        type="text"*/}
-            {/*        placeholder="Input repo name"*/}
-            {/*        className="search-input"*/}
-            {/*    />*/}
-            {/*    <button*/}
-            {/*        onClick={() => searchHandler()}*/}
-            {/*        className="search-btn"*/}
-            {/*    >Search*/}
-            {/*    </button>*/}
-            {/*</div>*/}
-
+            {isFetchError && <SnackbarComponent />}
             {/*<div className="pages">*/}
             {/*    {pages.map((page, index) =>*/}
             {/*        <span*/}
@@ -73,9 +49,9 @@ const UsersList = () => {
                     :
                     <Loader />
             }
-
+            {isSnackbarOpened && <SnackbarComponent />}
         </div>
     );
 };
 
-export default UsersList;
+export default connect(null, null)(UsersList);

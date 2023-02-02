@@ -8,7 +8,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import {
     authStore,
     persistor
-} from "./store/configureAuthStore";
+} from "./store/configureStore";
 
 import App from "./App";
 import Loader from "./loader/Loader";
