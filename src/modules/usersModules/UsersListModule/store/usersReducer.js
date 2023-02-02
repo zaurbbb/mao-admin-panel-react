@@ -13,11 +13,12 @@ const defaultState = {
 }
 
 export default function usersReducer(state, action) {
+    console.log("action.payload", action.payload);
     switch (action.type) {
         case SET_USERS:
             return {
                 ...state,
-                items: action.payload.items,
+                items: action.payload,
                 isFetching: false,
                 totalCount: action.payload.total_count,
             };
@@ -48,10 +49,6 @@ export const setUsers = (users) => ({
 export const setIsFetching = (bool) => ({
     type: SET_IS_FETCHING,
     payload: bool,
-});
-export const setCurrentPage = (page) => ({
-    type: SET_CURRENT_PAGE,
-    payload: page,
 });
 export const setFetchError = (bool) => ({
     type: SET_FETCH_ERROR,

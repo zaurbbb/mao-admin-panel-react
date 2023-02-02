@@ -3,9 +3,9 @@ import React from "react";
 const HeadingComponent = ({children, textValue}) => {
     return (
         <div className="heading">
-            <h2>
+            <h1>
                 {textValue}
-            </h2>
+            </h1>
             {children}
         </div>
     );

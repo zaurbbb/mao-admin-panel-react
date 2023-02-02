@@ -123,11 +123,11 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 1.6rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 h3,
@@ -226,11 +226,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
   overflow: hidden;
-  width: 5rem;
+  width: 3rem;
   height: 100vh;
-  padding: 0.8rem 0;
+  padding: 0.6rem 0;
   background-color: #1565c0;
 }
 .sidebar__item {
@@ -244,15 +243,15 @@ main {
   right: 0;
   top: 50%;
   transform: translate(0, -50%);
-  width: 4px;
+  width: 3px;
   height: 2rem;
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
   background: #ffffff;
 }
 .sidebar svg {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
 }
 .sidebar svg path {
   fill: #ffffff;
@@ -301,19 +300,64 @@ main {
 * @requires     none
 */
 .loader {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 3px dashed teal;
-  animation: rotate 1s infinite linear;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg) scale(1);
+.loader div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #1565c0;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader div:nth-child(1) {
+  left: 8px;
+  animation: loader1 0.6s infinite;
+}
+
+.loader div:nth-child(2) {
+  left: 8px;
+  animation: loader2 0.6s infinite;
+}
+
+.loader div:nth-child(3) {
+  left: 32px;
+  animation: loader2 0.6s infinite;
+}
+
+.loader div:nth-child(4) {
+  left: 56px;
+  animation: loader3 0.6s infinite;
+}
+
+@keyframes loader1 {
+  0% {
+    transform: scale(0);
   }
-  to {
-    transform: rotate(360deg) scale(1.5);
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes loader3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes loader2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
   }
 }
 

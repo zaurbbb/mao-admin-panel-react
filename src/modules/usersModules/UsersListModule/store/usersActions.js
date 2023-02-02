@@ -1,26 +1,26 @@
-import axios from "axios";
+import API from "../../../../api";
 import {
     setFetchError,
     setIsFetching,
     setUsers
 } from "./usersReducer";
 
-export const getUsers = (searchQuery = "stars:%3E1", currentPage, perPage) => {
-    if (searchQuery === "") {
-        searchQuery = "stars:%3E1"
-    }
+export const getUsers = () => {
     return async (dispatch) => {
         try {
-            dispatch(setIsFetching(true))
-            const response = await axios.get(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&per_page=${perPage}&page=${currentPage}`)
-            dispatch(setUsers(response.data))
+            dispatch(setIsFetching(true));
+            const response = await API.get(`/users/getUsers`);
+            console.log("response.data.users", response.data.users);
+            dispatch(setUsers(response.data.users));
+            dispatch(setIsFetching(false));
+
         } catch (e) {
             console.log("e", e)
             dispatch(setFetchError(true));
             dispatch(setIsFetching(false));
-            setTimeout(() => {
-                dispatch(setFetchError(false));
-            }, 3000);
+            // setTimeout(() => {
+            //     dispatch(setFetchError(false));
+            // }, 3000);
         }
     }
 };

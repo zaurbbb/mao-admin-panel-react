@@ -16,7 +16,6 @@ export const registerAction = (email, password, fullName, dateOfBirth, region, c
                 specialization: specialization,
             });
             dispatch(setUsers(response.data));
-            console.log("response: ", response);
         } catch (error) {
             console.error("error: ", error);
         }

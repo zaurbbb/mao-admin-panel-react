@@ -5,7 +5,7 @@ import { UsersListModule } from "../../../modules/usersModules/UsersListModule";
 const UsersPage = () => {
     return (
         <>
-            <h2>Users Page</h2>
+            <h1>Users Page</h1>
             <UsersListModule />
         </>
     );
