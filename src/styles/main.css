@@ -279,8 +279,12 @@ main {
   padding: 8px;
   border-radius: 4px;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-  background: #323232;
+  background-color: #f44336;
   color: #fff;
+  animation: 300ms ease-out slide-up;
+}
+.snackbar-error {
+  background-color: #f44336;
 }
 .snackbar__label {
   width: 100%;
@@ -297,12 +301,6 @@ main {
   cursor: pointer;
   padding: 8px;
 }
-.snackbar-open {
-  animation: 300ms ease-out slide-up;
-}
-.snackbar-close {
-  animation: 300ms ease-in slide-down;
-}
 
 @keyframes slide-up {
   from {
@@ -314,16 +312,14 @@ main {
     transform: translateY(0);
   }
 }
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(3rem);
-  }
+/**
+* @desc         table.scss
+* @requires     none
+*/
+.table {
+  display: flex;
 }
+
 /**
 * @desc         button variants.
 * @requires     variables.scss

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
-import { useDispatch } from "react-redux";
-
+import { useAppDispatch } from "./hooks/useAppDispatch";
 import { setIsAuth } from "./store/actions/authActions";
 import { authSelectors } from "./store/selectors/authSelectors";
 import { setIsSnackbarOpened } from "./store/actions/snackbarActions";
@@ -12,7 +11,7 @@ import SidebarComponent from "./components/SidebarComponent/SidebarComponent";
 import AppRouter from "./AppRouter";
 
 const App = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { isAuth } = useAppSelector(authSelectors);
     const { isSnackbarOpened } = useAppSelector(snackbarSelectors);
 

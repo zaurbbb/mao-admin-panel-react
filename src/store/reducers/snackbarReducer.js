@@ -1,7 +1,9 @@
 import { SET_IS_SNACKBAR_OPENED } from "../consts/snackbarConsts";
 
 const initialState = {
-    isSnackbarOpened: true,
+    isSnackbarOpened: false,
+    snackbarTextValue: "",
+    snackbarStatus: "error",
 }
 
 export default function snackbarReducer(state, action) {

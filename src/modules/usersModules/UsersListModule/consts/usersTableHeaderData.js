@@ -1,0 +1,1 @@
+export const usersTableHeaderData = ["id", "created_at", "email", "full_name", "date_of_birth", "region", "city", "specialization"];

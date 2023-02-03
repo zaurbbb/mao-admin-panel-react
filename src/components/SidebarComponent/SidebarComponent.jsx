@@ -1,14 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
+import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { setIsAuth } from "../../store/actions/authActions";
 import navbar from "../../config/navbar";
 
 import IconWrapper from "../IconWrapperComponent/IconWrapperComponent";
 
 const SidebarComponent = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     function isLinkActive(navData) {
         return navData.isActive ? "sidebar__item sidebar__item_active" : "sidebar__item";

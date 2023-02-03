@@ -5,7 +5,6 @@ import { setUsers } from "./registerUserReducer";
 export const registerAction = (email, password, fullName, dateOfBirth, region, city, specialization) => {
     return async (dispatch) => {
         try {
-        console.log("received");
             const response = await API.post("/users/register", {
                 email: email,
                 password: password,

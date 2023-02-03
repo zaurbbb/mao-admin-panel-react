@@ -1,17 +1,24 @@
 import React from "react";
+
 import { setIsSnackbarOpened } from "../../store/actions/snackbarActions";
-import { useDispatch } from "react-redux";
+import { snackbarSelectors } from "../../store/selectors/snackbarSelectors";
+
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 const Snackbar = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+    const { isSnackbarOpened, snackbarTextValue, snackbarStatus } = useAppSelector(snackbarSelectors);
+    const snackbarClassName =  `snackbar snackbar-${snackbarStatus}`;
 
     function onCloseSnackbar() {
+        setTimeout(() => {}, 5000);
         dispatch(setIsSnackbarOpened(false));
     }
 
-    return (
-        <div className="snackbar">
-            <div className="snackbar__label">auf</div>
+    return isSnackbarOpened && (
+        <div className={snackbarClassName}>
+            <div className="snackbar__label">{snackbarTextValue}</div>
             <div className="snackbar__dismiss" onClick={onCloseSnackbar}>
                 &times;
             </div>

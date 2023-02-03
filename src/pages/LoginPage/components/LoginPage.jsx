@@ -1,10 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 
 import { setIsAuth } from "../../../store/actions/authActions";
+import { useAppDispatch } from "../../../hooks/useAppDispatch";
 
 const LoginPage = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const login = event => {
         event.preventDefault();

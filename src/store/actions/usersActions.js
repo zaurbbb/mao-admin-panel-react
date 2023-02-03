@@ -1,26 +1,18 @@
-import API from "../../api";
 import {
-    setFetchError,
-    setIsFetching,
-    setUsers
-} from "../reducers/usersReducer";
+    SET_FETCH_ERROR,
+    SET_IS_FETCHING,
+    SET_USERS
+} from "../consts/usersConsts";
 
-export const getUsers = () => {
-    return async (dispatch) => {
-        try {
-            dispatch(setIsFetching(true));
-            const response = await API.get(`/users/getUsers`);
-            console.log("response.data.users", response.data.users);
-            dispatch(setUsers(response.data.users));
-            dispatch(setIsFetching(false));
-
-        } catch (e) {
-            console.log("e", e)
-            dispatch(setFetchError(true));
-            dispatch(setIsFetching(false));
-            setTimeout(() => {
-                dispatch(setFetchError(false));
-            }, 3000);
-        }
-    }
-};
+export const setUsers = (users) => ({
+    type: SET_USERS,
+    payload: users,
+});
+export const setIsFetching = (bool) => ({
+    type: SET_IS_FETCHING,
+    payload: bool,
+});
+export const setFetchError = (bool) => ({
+    type: SET_FETCH_ERROR,
+    payload: bool,
+});

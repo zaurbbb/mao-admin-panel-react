@@ -1,10 +1,13 @@
-const SET_USERS = "SET_USERS";
-const SET_IS_FETCHING = "SET_IS_FETCHING";
-const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-const SET_FETCH_ERROR = "SET_FETCH_ERROR";
+import {
+    SET_USERS,
+    SET_IS_FETCHING,
+    SET_CURRENT_PAGE,
+    SET_FETCH_ERROR,
+    GET_USERS,
+} from "../consts/usersConsts";
 
 const defaultState = {
-    items: [],
+    usersArr: [],
     isFetching: true,
     currentPage: 1,
     perPage: 10,
@@ -17,7 +20,7 @@ export default function usersReducer(state, action) {
         case SET_USERS:
             return {
                 ...state,
-                items: action.payload,
+                usersArr: action.payload,
                 isFetching: false,
                 totalCount: action.payload.total_count,
             };
@@ -36,20 +39,14 @@ export default function usersReducer(state, action) {
                 ...state,
                 isFetchError: action.payload,
             }
+        case GET_USERS:
+
+            return {
+                ...state,
+                setIsFetching: true,
+
+            }
         default:
             return state || defaultState;
     }
 }
-
-export const setUsers = (users) => ({
-    type: SET_USERS,
-    payload: users,
-});
-export const setIsFetching = (bool) => ({
-    type: SET_IS_FETCHING,
-    payload: bool,
-});
-export const setFetchError = (bool) => ({
-    type: SET_FETCH_ERROR,
-    payload: bool,
-});
