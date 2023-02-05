@@ -4,10 +4,15 @@
 */
 
 .loader {
-    display: inline-block;
     position: relative;
-    width: 40px;
+
+    display: inline-block;
+
+    width: $fs-large;
     height: 40px;
+
+    padding: $fs-regular 0;
+    //border: 1px solid $primary-dark-color;
 }
 
 .loader div {
@@ -15,6 +20,7 @@
     top: 0;
     width: 13px;
     height: 13px;
+    margin: $fs-small 0;
     border-radius: 50%;
     background: $primary-dark-color;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);

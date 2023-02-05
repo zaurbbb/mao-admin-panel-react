@@ -1,13 +1,13 @@
-import React from "react";
+import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
 
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { setIsAuth } from "../../store/actions/authActions";
-import navbar from "../../config/navbar";
+import { useAppDispatch } from "../hooks/useAppDispatch";
+import { setIsAuth } from "../store/actions/authActions";
+import navbar from "../config/navbar";
 
-import IconWrapper from "../IconWrapperComponent/IconWrapperComponent";
+import IconWrapper from "./IconWrapperComponent";
 
-const SidebarComponent = () => {
+const SidebarComponent = memo(() => {
     const dispatch = useAppDispatch();
 
     function isLinkActive(navData) {
@@ -34,6 +34,6 @@ const SidebarComponent = () => {
             )}
         </aside>
     );
-};
+});
 
 export default SidebarComponent;

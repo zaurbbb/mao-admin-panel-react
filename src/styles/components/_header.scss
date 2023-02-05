@@ -1,0 +1,27 @@
+/**
+* @desc         heading styles.
+* @requires     variables.scss,
+*/
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: $fs-xsmall;
+
+    width: 100%;
+
+    &__link {
+        @include size(1.8rem, 1.8rem);
+    }
+
+    &__button {
+        @include size(100%, 100%);
+
+        svg {
+            //@include size(2rem, 2rem);
+            path {
+                fill: $primary-dark-color;
+            }
+        }
+    }
+}

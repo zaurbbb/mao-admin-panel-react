@@ -3,12 +3,11 @@ import {
     SET_IS_FETCHING,
     SET_CURRENT_PAGE,
     SET_FETCH_ERROR,
-    GET_USERS,
 } from "../consts/usersConsts";
 
 const defaultState = {
     usersArr: [],
-    isFetching: true,
+    isFetching: false,
     currentPage: 1,
     perPage: 10,
     totalCount: 0,
@@ -38,13 +37,6 @@ export default function usersReducer(state, action) {
             return {
                 ...state,
                 isFetchError: action.payload,
-            }
-        case GET_USERS:
-
-            return {
-                ...state,
-                setIsFetching: true,
-
             }
         default:
             return state || defaultState;

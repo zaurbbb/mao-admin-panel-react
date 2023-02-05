@@ -1,39 +1,48 @@
 %ease {
-  transition: all 0.35s ease-out;
-  -webkit-transition: all 0.35s ease-out !important;
+    transition: all 0.35s ease-out;
+    -webkit-transition: all 0.35s ease-out !important;
 }
 
 %nav-underline {
-  content: "";
-  height: 2px;
-  bottom: 0;
-  left: 10px;
-  width: 0;
-  position: absolute;
-  background: $white-color-1;
-  border-radius: 5px;
+    content: "";
+    height: 2px;
+    bottom: 0;
+    left: 10px;
+    width: 0;
+    position: absolute;
+    background: $white-color-1;
+    border-radius: 5px;
 }
 
 %cover-img {
-  border-radius: $border-radius-circle;
-  border: 1px solid $gray-color-1;
-  padding: 10px 10px;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  cursor: pointer;
-  img {
-    // border-radius: $border-radius-4;
-    width: 100%;
-  }
+    border-radius: $border-radius-circle;
+    border: 1px solid $gray-color-1;
+    padding: 10px 10px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+    }
 }
 
 
 %note {
-  padding: 15px;
-  border: 1px solid $info-light-color;
-  border-radius: $border-radius-circle;
-  background: rgba($info-light-color, 0.1);
+    padding: 15px;
+    border: 1px solid $info-light-color;
+    border-radius: $border-radius-circle;
+    background: rgba($info-light-color, 0.1);
+}
+
+%table {
+    &-header-border {
+        border-bottom: 1px solid $gray-color-3;
+    }
+    &-column-border {
+        border-right: 1px solid $gray-color-3;
+    }
 }

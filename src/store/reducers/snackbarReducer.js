@@ -1,9 +1,13 @@
-import { SET_IS_SNACKBAR_OPENED } from "../consts/snackbarConsts";
+import {
+    SET_IS_SNACKBAR_OPENED,
+    SET_SNACKBAR_TEXT_VALUE,
+    SET_SNACKBAR_STATUS
+} from "../consts/snackbarConsts";
 
 const initialState = {
     isSnackbarOpened: false,
     snackbarTextValue: "",
-    snackbarStatus: "error",
+    snackbarStatus: "",
 }
 
 export default function snackbarReducer(state, action) {
@@ -12,6 +16,16 @@ export default function snackbarReducer(state, action) {
             return {
                 ...state,
                 isSnackbarOpened: action.payload,
+            };
+        case SET_SNACKBAR_TEXT_VALUE:
+            return {
+                ...state,
+                snackbarTextValue: action.payload,
+            };
+        case SET_SNACKBAR_STATUS:
+            return {
+                ...state,
+                snackbarStatus: action.payload,
             };
         default:
             return state || initialState;

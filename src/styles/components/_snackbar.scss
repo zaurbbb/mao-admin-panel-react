@@ -25,14 +25,18 @@
     0px 6px 10px 0px rgba(0, 0, 0, 0.14),
     0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 
-    background-color: #f44336;
+    background-color: $danger-light-color;
 
-    color: #fff;
+    color: $white-color-1;
 
     animation: 300ms ease-out slide-up;
 
-    &-error {
-        background-color: #f44336;
+    &--success {
+        background-color: $action-light-color;
+    }
+
+    &--error {
+        background-color: $danger-light-color;
     }
 
     &__label {
@@ -44,7 +48,7 @@
     }
 
     &__dismiss {
-        color: #ae7ee9;
+        color: $white-color-1;
         font-size: 120%;
         font-weight: bold;
         margin-left: 8px;

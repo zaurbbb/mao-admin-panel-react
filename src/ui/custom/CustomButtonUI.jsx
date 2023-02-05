@@ -1,11 +1,14 @@
 import React from "react";
 
-const CustomButtonUI = ({ textValue, className }) => {
+const CustomButtonUI = ({ textValue, className, onClick }) => {
 
     return (
-        <button className={`${className} button`}>
+        <div
+            className={`${className} button`}
+            onClick={onClick}
+        >
             {textValue}
-        </button>
+        </div>
     );
 };
 

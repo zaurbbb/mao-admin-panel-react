@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, {
+    Suspense,
+    useEffect
+} from "react";
 
 import { useAppDispatch } from "./hooks/useAppDispatch";
 import { setIsAuth } from "./store/actions/authActions";
 import { authSelectors } from "./store/selectors/authSelectors";
-import { setIsSnackbarOpened } from "./store/actions/snackbarActions";
 import { snackbarSelectors } from "./store/selectors/snackbarSelectors";
 import { useAppSelector } from "./hooks/useAppSelector";
 
-import SidebarComponent from "./components/SidebarComponent/SidebarComponent";
-import AppRouter from "./AppRouter";
+import SidebarComponent from "./components/SidebarComponent";
+import SnackbarComponent from "./components/SnackbarComponent";
+import Loader from "./loader/Loader";
 
+const LazyAppRouter = React.lazy(() => import("./AppRouter"));
 const App = () => {
     const dispatch = useAppDispatch();
     const { isAuth } = useAppSelector(authSelectors);
@@ -19,18 +23,17 @@ const App = () => {
         if (isAuth) {
             dispatch(setIsAuth(true));
         }
-        if (isSnackbarOpened) {
-            dispatch(setIsSnackbarOpened(true));
-        }
     }, [isAuth, dispatch, isSnackbarOpened]);
-
 
     return (
         <div className="app">
             <SidebarComponent />
             <main>
-                <AppRouter />
+                <Suspense fallback={<Loader />}>
+                    <LazyAppRouter />
+                </Suspense>
             </main>
+            <SnackbarComponent />
         </div>
     );
 };

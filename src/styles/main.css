@@ -10,6 +10,13 @@
 * @desc         mixins of the app.
 * @requires     variables.scss
 */
+.table__row:not(:last-child) {
+  border-bottom: 1px solid #8c96a9;
+}
+.table__column:not(:last-child) {
+  border-right: 1px solid #8c96a9;
+}
+
 /**
 * @desc         reset styles
 * @requires     none
@@ -170,42 +177,52 @@ html {
     font-size: 16px;
   }
 }
+body {
+  overflow: hidden;
+}
+
 .app {
   display: flex;
 }
 
+aside {
+  width: 6%;
+}
+
 main {
+  width: 94%;
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100vh;
   padding: 1rem 1.6rem;
   gap: 1rem;
 }
 
-/**
-* @desc         buttons-group styles.
-* @requires     variables.scss
-*/
-.buttons-group {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-.buttons-group__button {
-  flex: 0 3 auto;
+svg path {
+  fill: #1565c0;
 }
 
 /**
 * @desc         heading styles.
 * @requires     variables.scss,
 */
-.heading {
+.header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   width: 100%;
+}
+.header__link {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.header__button {
+  width: 100%;
+  height: 100%;
+}
+.header__button svg path {
+  fill: #1565c0;
 }
 
 /**
@@ -230,7 +247,6 @@ main {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  width: 3rem;
   height: 100vh;
   padding: 0.6rem 0;
   background-color: #1565c0;
@@ -279,12 +295,15 @@ main {
   padding: 8px;
   border-radius: 4px;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-  background-color: #f44336;
-  color: #fff;
+  background-color: #c23934;
+  color: #ffffff;
   animation: 300ms ease-out slide-up;
 }
-.snackbar-error {
-  background-color: #f44336;
+.snackbar--success {
+  background-color: #02a257;
+}
+.snackbar--error {
+  background-color: #c23934;
 }
 .snackbar__label {
   width: 100%;
@@ -293,7 +312,7 @@ main {
   line-height: 1.2rem;
 }
 .snackbar__dismiss {
-  color: #ae7ee9;
+  color: #ffffff;
   font-size: 120%;
   font-weight: bold;
   margin-left: 8px;
@@ -318,6 +337,32 @@ main {
 */
 .table {
   display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+  width: 100%;
+  font-family: "GilroyLight", sans-serif;
+  font-weight: 600;
+}
+.table__row {
+  display: grid;
+  grid-template-columns: 2rem repeat(7, 10rem) 2rem;
+  gap: 1rem;
+  width: 84rem;
+  padding: 0 1rem;
+}
+.table__column {
+  padding: 1rem 0;
+  word-break: break-word;
+}
+.table::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #ffffff;
+}
+.table::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(21, 101, 192, 0.8);
 }
 
 /**
@@ -332,11 +377,9 @@ main {
   box-sizing: border-box;
   vertical-align: baseline;
   margin: 0;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  background-color: #1565c0;
-  outline: none;
-  color: #ffffff;
+  border-radius: 100%;
+  background-color: #ffffff;
+  color: #1565c0;
   font-size: 0.8rem;
   font-weight: 500;
   line-height: 20px;
@@ -346,16 +389,26 @@ main {
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
-.button svg {
-  width: 50%;
-  height: 50%;
+.button--plus {
+  padding: 5px 5px !important;
+}
+.button--default {
+  padding: 5px 5px !important;
+}
+.button svg path {
+  fill: #1565c0;
 }
 
 .button:hover,
 .button:focus {
-  outline: 1px solid #1565c0;
-  background-color: #ffffff;
-  color: #1565c0;
+  border-radius: 100%;
+  outline: 1px solid #ffffff;
+  background-color: #1565c0;
+  color: #ffffff;
+}
+.button:hover svg path,
+.button:focus svg path {
+  fill: #ffffff;
 }
 
 /**
@@ -363,10 +416,11 @@ main {
 * @requires     variables.scss
 */
 .loader {
-  display: inline-block;
   position: relative;
-  width: 40px;
+  display: inline-block;
+  width: 3rem;
   height: 40px;
+  padding: 1rem 0;
 }
 
 .loader div {
@@ -374,6 +428,7 @@ main {
   top: 0;
   width: 13px;
   height: 13px;
+  margin: 0.8rem 0;
   border-radius: 50%;
   background: #1565c0;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);

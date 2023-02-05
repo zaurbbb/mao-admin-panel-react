@@ -1,11 +1,11 @@
 import React from "react";
 
-import HeadingComponent from "../../../../components/HeadingComponent/HeadingComponent";
+import HeaderComponent from "../../../../components/HeaderComponent";
 
 const GreetingModule = () => {
     return (
         <section className="greeting">
-            <HeadingComponent textValue="Admin Panel v2.0"/>
+            <HeaderComponent textValue="Admin Panel v2.0"/>
             {/*<ButtonsGroupComponent data={pagesList}/>*/}
         </section>
     );

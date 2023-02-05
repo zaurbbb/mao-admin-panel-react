@@ -14,7 +14,6 @@ import { useAppSelector } from "./hooks/useAppSelector";
 
 const AppRouter = () => {
     const {isAuth} = useAppSelector(authSelectors);
-
     return (
         <Routes>
             {isAuth

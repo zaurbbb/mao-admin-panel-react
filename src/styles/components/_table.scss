@@ -5,4 +5,47 @@
 
 .table {
     display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+
+    width: 100%;
+
+    font-family: $font-family-light;
+    font-weight: $font-w-semi-bold;
+
+    &__row {
+        display: grid;
+        grid-template-columns: 2rem repeat(7, 10rem) 2rem;
+        gap: 1rem;
+
+        width: 84rem;
+        padding: 0 1rem;
+
+        &:not(:last-child) {
+            @extend %table-header-border;
+        }
+
+    }
+
+    &__column {
+        padding: 1rem 0;
+
+        word-break: break-word;
+
+        &:not(:last-child) {
+            @extend %table-column-border;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+        background-color: $white-color-1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        background-color: $webkit-bg;
+    }
 }

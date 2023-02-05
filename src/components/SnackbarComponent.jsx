@@ -1,15 +1,15 @@
-import React from "react";
+import React, { memo } from "react";
 
-import { setIsSnackbarOpened } from "../../store/actions/snackbarActions";
-import { snackbarSelectors } from "../../store/selectors/snackbarSelectors";
+import { setIsSnackbarOpened } from "../store/actions/snackbarActions";
+import { snackbarSelectors } from "../store/selectors/snackbarSelectors";
 
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { useAppSelector } from "../../hooks/useAppSelector";
+import { useAppDispatch } from "../hooks/useAppDispatch";
+import { useAppSelector } from "../hooks/useAppSelector";
 
-const Snackbar = () => {
+const Snackbar = memo(() => {
     const dispatch = useAppDispatch();
     const { isSnackbarOpened, snackbarTextValue, snackbarStatus } = useAppSelector(snackbarSelectors);
-    const snackbarClassName =  `snackbar snackbar-${snackbarStatus}`;
+    const snackbarClassName =  `snackbar snackbar--${snackbarStatus}`;
 
     function onCloseSnackbar() {
         setTimeout(() => {}, 5000);
@@ -24,5 +24,5 @@ const Snackbar = () => {
             </div>
         </div>
     );
-};
+});
 export default Snackbar;

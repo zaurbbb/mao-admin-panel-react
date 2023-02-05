@@ -13,14 +13,12 @@
     vertical-align: baseline;
 
     margin: 0;
-    padding: $button-default-padding;
+    //padding: $button-default-padding;
 
-    border-radius: 8px;
+    border-radius: 100%;
+    background-color: $white-color-1;
 
-    background-color: $primary-dark-color;
-    outline: none;
-
-    color: $white-color-1;
+    color: $primary-dark-color;
     font-size: $fs-small;
     font-weight: 500;
     line-height: 20px;
@@ -32,17 +30,35 @@
 
     transition: all .1s ease-in-out;
 
+    &--plus {
+        padding: $button-square-padding !important;
+    }
+
+    &--default {
+        padding: $button-square-padding !important;
+    }
+
     svg {
-        @include size(50%, 50%);
+        //@include size(100%, 100%);
+        path {
+            fill: $primary-dark-color;
+        }
     }
 }
 
 .button:hover,
 .button:focus {
-    outline: 1px solid $border-primary-color;
+    border-radius: 100%;
+    outline: 1px solid $white-color-1;
 
-    background-color: $white-color-1;
+    background-color: $border-primary-color;
 
-    color: $primary-dark-color;
+    color: $white-color-1;
+
+    svg {
+        path {
+            fill: $white-color-1;
+        }
+    }
 }
 

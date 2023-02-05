@@ -38,7 +38,7 @@ $input-placeholder-color: $gray-color-2;
 // body
 $body-background: $gray-color-1;
 // badge - pill
-$badge-pill-bg: rgba($primary-dark-color, .1);
+$webkit-bg: rgba($primary-dark-color, .8);
 // footer
 $footer-bg: $primary-dark-color;
 
@@ -108,7 +108,8 @@ $xs:  360px;
 
 // [margins and paddings - variables]
 // paddings
-$button-default-padding: $fs-xsmall $fs-regular;
+$button-default-padding: $fs-small $fs-regular;
+$button-square-padding: 5px 5px;
 $navlink-padding-x: 0px;
 $layout-padding-y: 1.25rem;
 

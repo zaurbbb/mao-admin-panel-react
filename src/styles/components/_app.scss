@@ -24,19 +24,38 @@ html {
         font-size: 16.00px
     }
 }
+
+body {
+    overflow: hidden;
+}
+
 .app {
     display: flex;
+    //grid-template-columns: $fs-large 1fr;
     //color: white;
 }
 
+aside {
+    width: 6%;
+}
+
 main {
+    width: 94%;
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
-    width: 100%;
+    //max-width: 65%;
     height: 100vh;
     padding: 1rem 1.6rem;
 
     gap: $fs-regular;
+}
+
+svg {
+    path {
+        fill: $primary-dark-color;
+    }
 }
 
