@@ -1,0 +1,15 @@
+/**
+* @desc         label.
+* @requires     variables.scss
+*/
+
+.label {
+    font-weight: bold;
+    color: $text-default-color;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        color: $text-hover-color;
+        cursor: pointer;
+    }
+}

@@ -5,21 +5,19 @@ import {
 } from "../../../../store/actions/usersActions";
 import {
     setIsSnackbarOpened,
-    setSnackbarStatus,
-    setSnackbarTextValue
+    setSnackbarContent
 } from "../../../../store/actions/snackbarActions";
 
 import API from "../../../../api";
 
 export const getUsers = () => {
-    return async (dispatch) => {
+    return async function (dispatch){
         try {
             dispatch(setIsFetching(true));
             const response = await API.get(`/users/getUsers`);
             console.log("response", response);
             dispatch(setUsers(response.data.users));
             dispatch(setIsFetching(false));
-
         } catch (e) {
             console.log("e", e)
             dispatch(setFetchError(true));
@@ -37,11 +35,13 @@ export const deleteUser = (id) => {
         try {
             await API.delete(`/users/deleteUser/${id}`);
             dispatch(setIsSnackbarOpened(true));
-            dispatch(setSnackbarStatus("success"));
-            dispatch(setSnackbarTextValue("User has been successfully deleted"));
+            dispatch(setSnackbarContent({
+                status: "success",
+                textValue: "User has been successfully deleted"
+            }));
             window.location.reload();
         } catch (e) {
-            console.log('delete user', e)
+            console.log("delete user", e)
         }
     }
 };

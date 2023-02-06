@@ -3,12 +3,12 @@ import React from "react";
 const CustomButtonUI = ({ textValue, className, onClick }) => {
 
     return (
-        <div
+        <button
             className={`${className} button`}
             onClick={onClick}
         >
             {textValue}
-        </div>
+        </button>
     );
 };
 

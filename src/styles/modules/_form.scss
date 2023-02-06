@@ -1,0 +1,23 @@
+/**
+* @desc         table.scss
+* @requires     variables.scss
+*/
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
+    align-items: flex-end;
+    column-gap: $fs-medium;
+    row-gap: $fs-regular;
+
+    width: 100%;
+
+    &__element {
+        display: flex;
+        flex-direction: column;
+        gap: $fs-xsmall;
+    }
+
+
+}

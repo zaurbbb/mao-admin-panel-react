@@ -1,23 +1,36 @@
 import API from "../../../../api";
-
-import { setUsers } from "../../../../store/actions/usersActions";
+import {
+    setIsSnackbarOpened,
+    setSnackbarContent
+} from "../../../../store/actions/snackbarActions";
 
 export const registerUser = (email, password, fullName, dateOfBirth, region, city, specialization) => {
-    return async (dispatch) => {
+    return async function (dispatch) {
         try {
-            const response = await API.post("/users/register", {
-                email: email,
-                password: password,
+            await API.post("/users/register", {
+                email,
+                password,
                 full_name: fullName,
                 date_of_birth: dateOfBirth,
-                region: region,
-                city: city,
-                specialization: specialization,
+                region,
+                city,
+                specialization
             });
-            console.log("got here");
-            dispatch(setUsers(response.data));
+            window.location.reload();
+            dispatch(setIsSnackbarOpened(true));
+            dispatch(setSnackbarContent({
+                status: "success",
+                textValue: "User has been successfully registered"
+            }));
         } catch (error) {
-            console.error("error: ", error);
+            const errorMessage = error.response.data.message;
+            console.log(errorMessage);
+            dispatch(setIsSnackbarOpened(true));
+            dispatch(setSnackbarContent({
+                status: "error",
+                textValue: errorMessage
+            }));
+            console.error("errorMessage: ", errorMessage);
         }
-    };
+    }
 };

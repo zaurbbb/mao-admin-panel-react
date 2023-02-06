@@ -1,6 +1,6 @@
 import React from "react";
 
-import { GreetingModule } from "../../../modules/separateModules/GreetingModule";
+import { GreetingModule } from "../../../../modules/separateModules/GreetingModule";
 
 const MainPage = () => {
     return (

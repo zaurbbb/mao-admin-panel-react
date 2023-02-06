@@ -5,6 +5,7 @@ import React, {
 
 import { useAppDispatch } from "./hooks/useAppDispatch";
 import { setIsAuth } from "./store/actions/authActions";
+import { setIsSnackbarOpened } from "./store/actions/snackbarActions";
 import { authSelectors } from "./store/selectors/authSelectors";
 import { snackbarSelectors } from "./store/selectors/snackbarSelectors";
 import { useAppSelector } from "./hooks/useAppSelector";
@@ -23,7 +24,15 @@ const App = () => {
         if (isAuth) {
             dispatch(setIsAuth(true));
         }
-    }, [isAuth, dispatch, isSnackbarOpened]);
+    }, [isAuth, dispatch]);
+
+    useEffect(() => {
+        if (isSnackbarOpened) {
+            setTimeout(() => {
+                dispatch(setIsSnackbarOpened(false));
+            }, 6000);
+        }
+    }, [isSnackbarOpened, dispatch]);
 
     return (
         <div className="app">

@@ -7,8 +7,6 @@ import React, {
 import { getUsers } from "../asyncActions/usersAsyncActions";
 
 import { usersSelectors } from "../../../../store/selectors/usersSelectors";
-import { snackbarSelectors } from "../../../../store/selectors/snackbarSelectors";
-import { setIsSnackbarOpened } from "../../../../store/actions/snackbarActions";
 
 import { useAppDispatch } from "../../../../hooks/useAppDispatch";
 import { useAppSelector } from "../../../../hooks/useAppSelector";
@@ -23,23 +21,14 @@ import TableRowComponent from "../../../../components/TableRowComponent";
 const UsersTableModule = memo(() => {
     const dispatch = useAppDispatch();
     const { usersArr, isFetching } = useAppSelector(usersSelectors);
-    const { isSnackbarOpened } = useAppSelector(snackbarSelectors);
     const usersList = useMemo(() => usersArr, [usersArr]);
-
-    useEffect(() => {
-        if (isSnackbarOpened) {
-            setTimeout(() => {
-                dispatch(setIsSnackbarOpened(false));
-            }, 5000);
-        }
-    }, [dispatch, isSnackbarOpened]);
 
     useEffect(() => {
         dispatch(getUsers());
     }, [dispatch]);
 
     return (
-        <>
+        <section className="usersTable">
             <HeaderComponent
                 textValue="Users Page"
                 icon="plus"
@@ -61,7 +50,7 @@ const UsersTableModule = memo(() => {
                 </div>
             }
 
-        </>
+        </section>
     );
 });
 

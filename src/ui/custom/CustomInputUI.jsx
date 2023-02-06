@@ -1,11 +1,21 @@
-import React from "react";
+import React, {
+    memo,
+    useMemo
+} from "react";
 
-const CustomInputUI = (props) => {
+const CustomInputUI = memo((props) => {
+    const className = props.className;
+
+    const inputClassName = useMemo(() => {
+        return className ? `${className}__input input` : "input"
+    }, [className]);
+
     return (
         <input
             {...props}
+            className={inputClassName}
         />
     );
-};
+});
 
 export default CustomInputUI;

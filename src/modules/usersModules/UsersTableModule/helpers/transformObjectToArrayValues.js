@@ -2,7 +2,6 @@ import moment from "moment";
 
 // transform userItem from object to array of values without password and updated_at
 export const transformObjectToArrayValues = (dataKeys, objectItem) => {
-    console.log("UsersTableBody render");
     return dataKeys
         .filter(key => {
             return !(key === "updated_at" || key === "password");

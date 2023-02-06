@@ -1,7 +1,6 @@
 import {
     SET_IS_SNACKBAR_OPENED,
-    SET_SNACKBAR_TEXT_VALUE,
-    SET_SNACKBAR_STATUS
+    SET_SNACKBAR_CONTENT,
 } from "../consts/snackbarConsts";
 
 export const setIsSnackbarOpened = (isSnackbarOpened) => ({
@@ -9,11 +8,7 @@ export const setIsSnackbarOpened = (isSnackbarOpened) => ({
     payload: isSnackbarOpened,
 });
 
-export const setSnackbarTextValue = (snackbarTextValue) => ({
-    type: SET_SNACKBAR_TEXT_VALUE,
-    payload: snackbarTextValue,
-});
-export const setSnackbarStatus = (snackbarStatus) => ({
-    type: SET_SNACKBAR_STATUS,
-    payload: snackbarStatus,
+export const setSnackbarContent = (snackbarContent) => ({
+    type: SET_SNACKBAR_CONTENT,
+    payload: snackbarContent,
 });

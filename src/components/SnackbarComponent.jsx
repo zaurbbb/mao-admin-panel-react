@@ -8,7 +8,10 @@ import { useAppSelector } from "../hooks/useAppSelector";
 
 const Snackbar = memo(() => {
     const dispatch = useAppDispatch();
-    const { isSnackbarOpened, snackbarTextValue, snackbarStatus } = useAppSelector(snackbarSelectors);
+    const { isSnackbarOpened, snackbarContent } = useAppSelector(snackbarSelectors);
+    const snackbarStatus = snackbarContent.status;
+    const snackbarTextValue = snackbarContent.textValue;
+
     const snackbarClassName =  `snackbar snackbar--${snackbarStatus}`;
 
     function onCloseSnackbar() {

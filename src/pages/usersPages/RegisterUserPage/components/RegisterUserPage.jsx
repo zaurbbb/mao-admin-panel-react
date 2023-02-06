@@ -1,6 +1,6 @@
 import React from "react";
 
-import { RegisterUserModule } from "../../../modules/usersModules/RegisterUserModule";
+import { RegisterUserModule } from "../../../../modules/usersModules/RegisterUserModule";
 
 const CreateUserPage = () => {
     return (

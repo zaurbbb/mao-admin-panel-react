@@ -1,7 +1,7 @@
-import { UsersPage } from "../pages/UsersPage/index";
-import { MainPage } from "../pages/MainPage";
-import { LoginPage } from "../pages/LoginPage";
-import { RegisterUserPage } from "../pages/RegisterUserPage";
+import { UsersPage } from "../pages/usersPages/AllUsersPage";
+import { MainPage } from "../pages/separatePages/MainPage";
+import { LoginPage } from "../pages/separatePages/LoginPage";
+import { RegisterUserPage } from "../pages/usersPages/RegisterUserPage";
 
 export const privateRoutes = [
     {path: "/", component: <MainPage />, id: 1},

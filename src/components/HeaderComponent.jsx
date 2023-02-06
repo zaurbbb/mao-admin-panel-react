@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 import PlusIconUI from "../ui/icons/PlusIconUI";
 import CustomButtonUI from "../ui/custom/CustomButtonUI";
 
-const HeaderComponent = ({ textValue, icon, link}) => {
+const HeaderComponent = memo(({ textValue, icon, link}) => {
     switch (icon) {
         case "plus":
             icon = <PlusIconUI />;
@@ -25,6 +25,6 @@ const HeaderComponent = ({ textValue, icon, link}) => {
             }
         </div>
     );
-};
+});
 
 export default HeaderComponent;

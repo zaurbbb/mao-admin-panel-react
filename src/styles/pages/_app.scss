@@ -11,6 +11,7 @@
 
 html {
     font-size: 25.00px;
+    @extend %webkit-scrollbar;
 }
 
 @media (max-width: $md) {
@@ -31,8 +32,6 @@ body {
 
 .app {
     display: flex;
-    //grid-template-columns: $fs-large 1fr;
-    //color: white;
 }
 
 aside {
@@ -40,17 +39,23 @@ aside {
 }
 
 main {
-    width: 94%;
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-
-    //max-width: 65%;
+    width: 94%;
     height: 100vh;
     padding: 1rem 1.6rem;
 
+    overflow-y: scroll;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
     gap: $fs-regular;
+
+    .login {
+        width: fit-content;
+    }
 }
 
 svg {

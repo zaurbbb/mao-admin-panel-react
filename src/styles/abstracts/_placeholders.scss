@@ -46,3 +46,21 @@
         border-right: 1px solid $gray-color-3;
     }
 }
+
+%webkit-scrollbar {
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+        background-color: $white-color-1;
+
+        &-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+            background-color: $webkit-bg;
+
+            &:hover {
+                background-color: $primary-dark-color;
+            }
+        }
+    }
+}

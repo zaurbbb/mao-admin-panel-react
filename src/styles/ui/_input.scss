@@ -1,0 +1,60 @@
+/**
+* @desc         input variants.
+* @requires     variables.scss
+*/
+
+.input {
+    border: none;
+    border-radius: $fs-xsmall;
+    outline: 2px solid $gray-color-4;
+
+    font-size: $fs-small;
+
+    transition: all .1s ease-in-out;
+
+    color: $text-default-color;
+
+    &[type=text],
+    &[type=password],
+    &[type=email],
+    &[type=date] {
+        padding: $fs-xxsmall $fs-xsmall;
+
+
+        &:hover {
+            outline: 2px solid $border-primary-color;
+        }
+
+        &:focus {
+            outline: 3px solid $border-primary-color;
+            color: $text-primary-color;
+        }
+    }
+
+    &[type=submit] {
+        padding: $fs-xsmall $fs-small;
+
+        border: none;
+        outline: none;
+
+        background-color: $border-primary-color;
+
+        font-size: inherit;
+        font-weight: 500;
+        line-height: 20px;
+        list-style: none;
+        color: $text-white-color;
+        text-align: center;
+        text-decoration: none;
+
+        cursor: pointer;
+
+        &:hover {
+            outline: 2px solid $border-primary-color;
+
+            background-color: $white-color-1;
+
+            color: $text-primary-color;
+        }
+    }
+}
