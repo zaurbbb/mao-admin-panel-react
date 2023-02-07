@@ -44,6 +44,10 @@ a {
 main {
     position: relative;
 
+    display: flex;
+    flex-direction: column;
+    gap: $fs-medium;
+
     width: 94%;
     height: 100vh;
     padding: 1rem 1.6rem;

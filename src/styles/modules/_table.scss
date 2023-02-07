@@ -47,10 +47,11 @@
     @extend %webkit-scrollbar;
 }
 
-//.
-//&--users {
-//    width: $table-column-regular;
-//}
+.users-table {
+    .table__column {
+        width: $table-column-regular;
+    }
+}
 
 
 .medicines-table {

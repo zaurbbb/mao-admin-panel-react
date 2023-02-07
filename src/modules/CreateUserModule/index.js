@@ -1,0 +1,1 @@
+export { default as CreateUserModule } from "./components/CreateUserModule";

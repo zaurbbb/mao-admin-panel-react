@@ -28,7 +28,7 @@ const navbar = [
     },
     {
         id: 4,
-        path: `/news`,
+        path: `/posts`,
         section: "news",
         textValue: "News",
         icon: <NewsIconUI />

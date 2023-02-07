@@ -209,6 +209,9 @@ a {
 
 main {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
   width: 94%;
   height: 100vh;
   padding: 1rem 1.6rem;
@@ -359,7 +362,7 @@ section .login {
 * @desc         table.scss
 * @requires     variables.scss
 */
-.form, .form--register-medicine {
+.form, .form--create-medicine {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: flex-start;
@@ -369,7 +372,7 @@ section .login {
   width: 100%;
   font-size: 0.8rem;
 }
-.form--register-medicine {
+.form--create-medicine {
   grid-template-columns: 1fr 1fr 1fr;
 }
 .form__element {
@@ -405,6 +408,10 @@ section .login {
 .table__column svg {
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.users-table .table__column {
+  width: 12rem;
 }
 
 .medicines-table .table__column {

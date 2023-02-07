@@ -24,9 +24,9 @@ const UsersTableModule = memo(() => {
     return (
         <section className="users-table">
             <HeaderComponent
-                textValue="Users Page"
+                textValue="Users list"
                 icon="plus"
-                link="/registerUser"
+                link="/createUser"
             />
 
             {usersList.length === 0 ?
@@ -38,7 +38,6 @@ const UsersTableModule = memo(() => {
                     /> : <Loader />
 
             }
-
         </section>
     );
 });

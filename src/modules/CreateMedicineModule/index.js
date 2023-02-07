@@ -1,0 +1,1 @@
+export { default as CreateMedicineModule } from "./components/CreateMedicineModule";

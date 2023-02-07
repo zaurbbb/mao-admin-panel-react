@@ -14,6 +14,7 @@ const LoginModule = () => {
         event.preventDefault();
         dispatch(setIsAuth(true));
     };
+    
     return (
         <section className="login">
             <HeaderComponent textValue="Login to the admin panel" />

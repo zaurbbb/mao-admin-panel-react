@@ -1,1 +1,0 @@
-export { default as RegisterUserPage } from "./components/RegisterUserPage";

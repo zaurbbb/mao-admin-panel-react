@@ -28,7 +28,7 @@ const MedicinesTableModule = () => {
             <HeaderComponent
                 textValue="Medicines Catalogue"
                 icon="plus"
-                link="/registerMedicine"
+                link="/createMedicine"
             />
 
             {medicinesList.length === 0 ?
