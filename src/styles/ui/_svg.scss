@@ -1,0 +1,17 @@
+/**
+* @desc         svg.scss
+* @requires     variables.scss
+*/
+
+svg {
+    transition: all .1s ease-in-out;
+
+    cursor: pointer;
+    path {
+        fill: $primary-dark-color;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}

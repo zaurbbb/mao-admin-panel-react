@@ -21,6 +21,10 @@
             path {
                 fill: $primary-dark-color;
             }
+
+            &:hover {
+                transform: scale(1);
+            }
         }
     }
 }

@@ -28,6 +28,20 @@ $gray-color-4: #485460;
 $gray-color-5: #333333;
 $gray-color-6: #1d2b33;
 
+// font size
+$fs-xxxsmall: 0.2rem;
+$fs-xxsmall: 0.4rem;
+$fs-xsmall:  0.6rem;
+$fs-small:  0.8rem;
+$fs-regular: 1rem; // -> base size
+$fs-medium: 1.6rem;
+$fs-big: 2rem;
+$fs-large: 3rem;
+$fs-xlarge: 4rem;
+$fs-xxlarge: 5rem;
+$fs-xxxlarge: 6rem;
+$fs-massive: 10rem;
+
 // element colors
 // footer
 $footer-color: $primary-dark-color;
@@ -41,6 +55,12 @@ $body-background: $gray-color-1;
 $webkit-bg: rgba($primary-dark-color, .8);
 // footer
 $footer-bg: $primary-dark-color;
+//table
+$table-column-short: $fs-xlarge;
+$table-column-regular: 10rem;
+$table-column-long: 18rem;
+//table
+$table-column-regular: 12rem;
 
 // [text - variables]
 // text colors
@@ -65,19 +85,6 @@ $font-w-light: 300;
 $font-w-regular: 400;
 $font-w-medium: 500;
 $font-w-semi-bold: 600;
-
-// font size
-$fs-xxxsmall: 0.2rem;
-$fs-xxsmall: 0.4rem;
-$fs-xsmall:  0.6rem;
-$fs-small:  0.8rem;
-$fs-regular: 1rem; // -> base size
-$fs-medium: 1.6rem;
-$fs-big: 2rem;
-$fs-large: 3rem;
-$fs-xlarge: 4rem;
-$fs-xxlarge: 5rem;
-$fs-xxxlarge: 6rem;
 
 // inline hights
 $base-line-height: normal;

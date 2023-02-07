@@ -10,12 +10,14 @@
         "components/header",
         "components/icon",
         "components/sidebar",
-        "components/snackbar",
-        "components/table";
+        "components/snackbar";
 
-@import "modules/form";
+@import "modules/form",
+        "modules/table";
 
 @import "ui/button",
         "ui/loader",
         "ui/input",
-        "ui/label";
+        "ui/label",
+        "ui/svg",
+        "ui/textarea";

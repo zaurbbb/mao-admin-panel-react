@@ -1,16 +1,26 @@
-import { UsersPage } from "../pages/usersPages/AllUsersPage";
-import { MainPage } from "../pages/separatePages/MainPage";
-import { LoginPage } from "../pages/separatePages/LoginPage";
-import { RegisterUserPage } from "../pages/usersPages/RegisterUserPage";
+import { MainPage } from "../pages/MainPage";
+
+import { AllUsersPage } from "../pages/AllUsersPage";
+import { AllMedicinesPage } from "../pages/AllMedicinesPage";
+
+import { SingleMedicinePage } from "../pages/SingleMedicinePage";
+
+import { RegisterUserPage } from "../pages/RegisterUserPage";
+import { RegisterMedicinePage } from "../pages/RegisterMedicinePage";
+
+import { LoginPage } from "../pages/LoginPage";
 
 export const privateRoutes = [
     {path: "/", component: <MainPage />, id: 1},
 
-    {path: "/users", component: <UsersPage />, id: 2},
-    {path: "/medicines", component: <h2>Medicines page</h2>, id: 3},
+    {path: "/users", component: <AllUsersPage />, id: 2},
+    {path: "/medicines", component: <AllMedicinesPage />, id: 3},
     {path: "/news", component: <h2>News page</h2>, id: 4},
 
-    {path: "/registerUser", component: <RegisterUserPage />, id: 5},
+    {path: "/medicines/:medicineId", component: <SingleMedicinePage />, id: 5},
+
+    {path: "/registerUser", component: <RegisterUserPage />, id: 6},
+    {path: "/registerMedicine", component: <RegisterMedicinePage />, id: 7},
 ];
 
 export const publicRoutes = [

@@ -1,0 +1,21 @@
+/**
+* @desc         textarea.scss
+* @requires     variables.scss
+*/
+
+.textarea {
+    width: 100%;
+    height: $fs-xxxlarge;
+
+    border: none;
+    border-radius: $fs-xsmall;
+    outline: 2px solid $gray-color-4;
+
+    font-size: $fs-small;
+
+    transition: all .1s ease-in-out;
+
+    color: $text-default-color;
+
+    @extend %webkit-scrollbar
+}

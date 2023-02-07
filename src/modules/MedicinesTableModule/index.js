@@ -1,0 +1,1 @@
+export { default as MedicinesTableModule } from "./components/MedicinesTableModule";

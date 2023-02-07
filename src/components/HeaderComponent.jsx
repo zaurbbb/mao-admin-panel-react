@@ -12,6 +12,7 @@ const HeaderComponent = memo(({ textValue, icon, link}) => {
         default:
             icon = false;
     }
+
     return (
         <div className="header">
             <h1 className="header__heading">{textValue}</h1>

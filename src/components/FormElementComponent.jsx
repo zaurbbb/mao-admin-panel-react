@@ -2,23 +2,43 @@ import React, { memo } from "react";
 
 import CustomLabelUI from "../ui/custom/CustomLabelUI";
 import CustomInputUI from "../ui/custom/CustomInputUI";
+import CustomTextareaUI from "../ui/custom/CustomTextareaUI";
 
-const FormElementComponent = memo(({ elementClassName, labelTextValue, inputType, inputValue, inputOnChange, inputOnClick }) => {
+const FormElementComponent = memo(({
+    elementClassName,
+    labelTextValue,
+    inputType,
+    inputValue,
+    inputOnChange,
+    inputOnClick,
+    textareaValue,
+    textareaOnChange
+}) => {
+    const formElementClassName = `${elementClassName}__element`
     return (
-        <div className="form__element">
+        <div className={formElementClassName}>
             {labelTextValue &&
                 <CustomLabelUI
                     textValue={labelTextValue}
                     className={elementClassName}
                 />
             }
-            <CustomInputUI
-                value={inputValue}
-                onChange={inputOnChange}
-                type={inputType}
-                className={elementClassName}
-                onClick={inputOnClick}
-            />
+            {textareaOnChange &&
+                <CustomTextareaUI
+                    value={textareaValue}
+                    onChange={textareaOnChange}
+                    className={elementClassName}
+                />
+            }
+            {inputType &&
+                <CustomInputUI
+                    value={inputValue}
+                    onChange={inputOnChange}
+                    type={inputType}
+                    className={elementClassName}
+                    onClick={inputOnClick}
+                />
+            }
         </div>
     );
 });

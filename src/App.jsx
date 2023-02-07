@@ -3,11 +3,14 @@ import React, {
     useEffect
 } from "react";
 
-import { useAppDispatch } from "./hooks/useAppDispatch";
 import { setIsAuth } from "./store/actions/authActions";
 import { setIsSnackbarOpened } from "./store/actions/snackbarActions";
-import { authSelectors } from "./store/selectors/authSelectors";
-import { snackbarSelectors } from "./store/selectors/snackbarSelectors";
+import {
+    authSelectors,
+    snackbarSelectors
+} from "./store/selectors";
+
+import { useAppDispatch } from "./hooks/useAppDispatch";
 import { useAppSelector } from "./hooks/useAppSelector";
 
 import SidebarComponent from "./components/SidebarComponent";

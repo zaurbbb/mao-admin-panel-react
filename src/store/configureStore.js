@@ -15,11 +15,13 @@ import storage from "redux-persist/lib/storage";
 import authReducer from "./reducers/authReducer";
 import snackbarReducer from "./reducers/snackbarReducer";
 import usersReducer from "./reducers/usersReducer";
+import medicinesReducer from "./reducers/medicinesReducer";
 
 export const rootReducer = combineReducers({
     auth: authReducer,
     snackbar: snackbarReducer,
     users: usersReducer,
+    medicines: medicinesReducer,
 });
 
 const persistConfig = {

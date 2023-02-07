@@ -1,0 +1,1 @@
+export { default as RegisterMedicineModule } from "./components/RegisterMedicineModule";

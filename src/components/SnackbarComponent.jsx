@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 
 import { setIsSnackbarOpened } from "../store/actions/snackbarActions";
-import { snackbarSelectors } from "../store/selectors/snackbarSelectors";
+import { snackbarSelectors } from "../store/selectors";
 
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { useAppSelector } from "../hooks/useAppSelector";

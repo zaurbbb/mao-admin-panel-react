@@ -10,7 +10,7 @@
 }
 
 html {
-    font-size: 25.00px;
+    font-size: 22.00px;
     @extend %webkit-scrollbar;
 }
 
@@ -38,6 +38,9 @@ aside {
     width: 6%;
 }
 
+a {
+    color: inherit;
+}
 main {
     position: relative;
 
@@ -55,12 +58,6 @@ section {
 
     .login {
         width: fit-content;
-    }
-}
-
-svg {
-    path {
-        fill: $primary-dark-color;
     }
 }
 

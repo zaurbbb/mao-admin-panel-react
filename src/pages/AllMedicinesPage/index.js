@@ -1,0 +1,1 @@
+export { default as AllMedicinesPage } from "./components/AllMedicinesPage";

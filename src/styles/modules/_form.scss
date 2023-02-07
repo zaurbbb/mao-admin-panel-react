@@ -4,6 +4,10 @@
 */
 
 .form {
+    &--register-medicine {
+        @extend .form;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: flex-start;
@@ -13,11 +17,10 @@
 
     width: 100%;
 
+    font-size: $fs-small;
     &__element {
         display: flex;
         flex-direction: column;
         gap: $fs-xsmall;
     }
-
-
 }

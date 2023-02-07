@@ -1,0 +1,60 @@
+/**
+* @desc         table.scss
+* @requires     variables.scss
+*/
+
+.table {
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+
+    //width: max-content;
+
+    font-family: $font-family-light;
+    font-weight: $font-w-semi-bold;
+
+    &__row {
+        display: flex;
+
+        width: max-content;
+
+
+        &:not(:last-child) {
+            @extend %table-header-border;
+        }
+    }
+
+    &__column {
+        padding: 1rem;
+
+        word-break: break-word;
+
+        &:first-child, &:last-child {
+            display: flex;
+            justify-content: center;
+            width: $table-column-short!important;
+        }
+
+        &:not(:last-child) {
+            @extend %table-column-border;
+        }
+
+        svg {
+            @include size(1.2rem, 1.2rem);
+        }
+    }
+
+    @extend %webkit-scrollbar;
+}
+
+//.
+//&--users {
+//    width: $table-column-regular;
+//}
+
+
+.medicines-table {
+    .table__column {
+        width: $table-column-long;
+    }
+}

@@ -16,8 +16,7 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "scss": "^0.2.4",
-    "swiper": "^8.4.5",
-    "web-vitals": "^2.1.4"
+    "swiper": "^8.4.5"
   },
   "scripts": {
     "start": "react-scripts start",

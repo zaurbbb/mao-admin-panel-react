@@ -9,7 +9,7 @@ import {
     privateRoutes,
     publicRoutes
 } from "./routes/routes";
-import { authSelectors } from "./store/selectors/authSelectors";
+import { authSelectors } from "./store/selectors";
 import { useAppSelector } from "./hooks/useAppSelector";
 
 const AppRouter = () => {
