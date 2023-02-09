@@ -1,1 +1,0 @@
-export { default as UsersTableModule } from "./components/UsersTableModule";

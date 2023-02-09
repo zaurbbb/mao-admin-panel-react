@@ -1,6 +1,6 @@
 import React from "react";
 
-const IconWrapper = (props) => {
+const IconWrapper = props => {
     return (
         <div
             className="icon"

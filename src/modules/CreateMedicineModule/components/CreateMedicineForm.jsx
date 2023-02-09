@@ -9,10 +9,9 @@ import { useAppSelector } from "../../../hooks/useAppSelector";
 import FormElementComponent from "../../../components/FormElementComponent";
 
 const CreateMedicineForm = () => {
-    const formClassName = "form";
-    const formTagClassName = `${formClassName} ${formClassName}--create-medicine`;
+    const formTagClassName = `form form--create-medicine`;
     const { medicinesArr } = useAppSelector(medicinesSelectors);
-    const theLastElemId = medicinesArr[medicinesArr.length - 1].id;
+    const theLastElemId = medicinesArr.length > 0 ? medicinesArr[medicinesArr.length - 1].id : 1;
     const dispatch = useAppDispatch();
 
     const [children, setChildren] = useState("");
@@ -138,7 +137,6 @@ const CreateMedicineForm = () => {
             className={formTagClassName}
         >
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Class in English"
                 inputType="text"
                 inputValue={classEng}
@@ -146,7 +144,6 @@ const CreateMedicineForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Class in Kazakh"
                 inputType="text"
                 inputValue={classKaz}
@@ -154,7 +151,6 @@ const CreateMedicineForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Class in Russian"
                 inputType="text"
                 inputValue={classRus}
@@ -162,7 +158,6 @@ const CreateMedicineForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Name in English"
                 inputType="text"
                 inputValue={nameEng}
@@ -170,7 +165,6 @@ const CreateMedicineForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Name in Kazakh"
                 inputType="text"
                 inputValue={nameKaz}
@@ -178,7 +172,6 @@ const CreateMedicineForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Name in Russian"
                 inputType="text"
                 inputValue={nameRus}
@@ -186,91 +179,78 @@ const CreateMedicineForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Contraindications for children"
                 textareaValue={children}
                 textareaOnChange={handleChildren}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="General contraindications"
                 textareaValue={contraindications}
                 textareaOnChange={handleContraindications}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Contraindications for elders"
                 textareaValue={elders}
                 textareaOnChange={handleElders}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Group"
                 textareaValue={group}
                 textareaOnChange={handleGroup}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Indications"
                 textareaValue={indications}
                 textareaOnChange={handleIndications}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Contraindications for kidneys disease"
                 textareaValue={kidneysDisorders}
                 textareaOnChange={handleKidneysDisorders}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Contraindications for liver disease"
                 textareaValue={liverDisorders}
                 textareaOnChange={handleLiverDisorders}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Notice"
                 textareaValue={notice}
                 textareaOnChange={handleNotice}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Definition"
                 textareaValue={pd}
                 textareaOnChange={handlePd}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="After Usage"
                 textareaValue={pk}
                 textareaOnChange={handlePk}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="For Pregnant"
                 textareaValue={pregnancy}
                 textareaOnChange={handlePregnancy}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Side Effects"
                 textareaValue={sideEffects}
                 textareaOnChange={handleSideEffects}
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 inputType={"submit"}
                 inputValue={"Сreate new medicine"}
             />

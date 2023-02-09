@@ -39,6 +39,11 @@
         background-color: $danger-light-color;
     }
 
+    &--warning {
+        background-color: $info-dark-color;
+        //color: $text-default-color;
+    }
+
     &__label {
         width: 100%;
         margin: 0;

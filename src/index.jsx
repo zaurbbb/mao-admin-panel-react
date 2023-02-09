@@ -11,7 +11,7 @@ import {
 } from "./store/configureStore";
 
 import App from "./App";
-import Loader from "./loader/Loader";
+import Loader from "./Loader";
 
 import "./styles/main.scss";
 

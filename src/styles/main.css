@@ -100,26 +100,26 @@ button {
 */
 @font-face {
   font-family: "GilroyBold";
-  src: local("GilroyBold"), url("../../assets/fonts/Gilroy-Bold.ttf") format("truetype");
+  src: local("GilroyBold"), url("../../assets/Gilroy-Bold.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "GilroySemiBold";
-  src: local("GilroySemiBold"), url("../../assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+  src: local("GilroySemiBold"), url("../../assets/Gilroy-SemiBold.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "GilroyRegular";
-  src: local("GilroyRegular"), url("../../assets/fonts/Gilroy-Regular.ttf") format("truetype");
+  src: local("GilroyRegular"), url("../../assets/Gilroy-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "GilroyLight";
-  src: local("GilroyLight"), url("../../assets/fonts/Gilroy-Light.ttf") format("truetype");
+  src: local("GilroyLight"), url("../../assets/Gilroy-Light.ttf") format("truetype");
 }
 @font-face {
   font-family: "GilroyThin";
-  src: local("GilroyThin"), url("../../assets/fonts/Gilroy-Thin.ttf") format("truetype");
+  src: local("GilroyThin"), url("../../assets/Gilroy-Thin.ttf") format("truetype");
 }
 body {
   line-height: normal;
@@ -197,6 +197,7 @@ body {
 
 .app {
   display: flex;
+  width: 100vw;
 }
 
 aside {
@@ -332,6 +333,9 @@ section .login {
 .snackbar--error {
   background-color: #c23934;
 }
+.snackbar--warning {
+  background-color: #ffc048;
+}
 .snackbar__label {
   width: 100%;
   margin: 0;
@@ -362,23 +366,30 @@ section .login {
 * @desc         table.scss
 * @requires     variables.scss
 */
-.form, .form--create-medicine {
+.form, .form--create-post, .form--create-medicine, .form--create-user {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   justify-content: flex-start;
   align-items: flex-end;
   column-gap: 1.6rem;
   row-gap: 1rem;
-  width: 100%;
   font-size: 0.8rem;
 }
+.form--create-user {
+  grid-template-columns: 1fr 1fr;
+}
 .form--create-medicine {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr !important;
+}
+.form--create-post {
+  grid-template-columns: 1fr;
 }
 .form__element {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+.form__element:last-child {
+  align-items: flex-start;
 }
 
 /**
@@ -415,6 +426,10 @@ section .login {
 }
 
 .medicines-table .table__column {
+  width: 18rem;
+}
+
+.posts-table .table__column {
   width: 18rem;
 }
 
@@ -608,6 +623,7 @@ svg:hover {
 */
 .textarea {
   width: 100%;
+  max-width: 62rem;
   height: 6rem;
   border: none;
   border-radius: 0.6rem;

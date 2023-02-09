@@ -1,9 +1,11 @@
 import React from "react";
 
+import { ReadPostsModule } from "../modules/ReadPostsModule";
+
 const AllPostsPage = () => {
     return (
         <>
-            All News Page
+            <ReadPostsModule />
         </>
     );
 };

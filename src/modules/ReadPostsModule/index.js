@@ -1,0 +1,1 @@
+export { default as ReadPostsModule } from "./components/ReadPostsModule";

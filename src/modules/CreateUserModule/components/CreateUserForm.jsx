@@ -4,8 +4,7 @@ import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { createUser } from "../asyncActions/createAsyncActions";
 
 const CreateUserForm = () => {
-    const formClassName = "form";
-    const formTagClassName = `${formClassName} ${formClassName}--create-user`;
+    const formTagClassName = `form form--create-user`;
     const dispatch = useAppDispatch();
 
     const [email, setEmail] = useState("");
@@ -55,7 +54,6 @@ const CreateUserForm = () => {
             className={formTagClassName}
         >
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Email"
                 inputType="email"
                 inputValue={email}
@@ -63,7 +61,6 @@ const CreateUserForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Password"
                 inputType="password"
                 inputValue={password}
@@ -71,7 +68,6 @@ const CreateUserForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Full name"
                 inputType="text"
                 inputValue={fullName}
@@ -79,7 +75,6 @@ const CreateUserForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Date of birth"
                 inputType="date"
                 inputValue={dateOfBirth}
@@ -87,7 +82,6 @@ const CreateUserForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Region"
                 inputType="text"
                 inputValue={region}
@@ -95,7 +89,6 @@ const CreateUserForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="City"
                 inputType="text"
                 inputValue={city}
@@ -103,7 +96,6 @@ const CreateUserForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 labelTextValue="Specialization"
                 inputType="text"
                 inputValue={specialization}
@@ -111,7 +103,6 @@ const CreateUserForm = () => {
             />
 
             <FormElementComponent
-                elementClassName={formClassName}
                 inputType={"submit"}
                 inputValue={"Сreate new user"}
             />

@@ -1,10 +1,10 @@
 import React from "react";
-import { UsersTableModule } from "../modules/UsersTableModule";
+import { ReadUsersModule } from "../modules/ReadUsersModule";
 
 const AllUsersPage = () => {
     return (
         <>
-            <UsersTableModule />
+            <ReadUsersModule />
         </>
     );
 };

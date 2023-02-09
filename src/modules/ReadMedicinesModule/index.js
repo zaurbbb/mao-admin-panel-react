@@ -1,0 +1,1 @@
+export { default as ReadMedicinesModule } from "./components/ReadMedicinesModule";

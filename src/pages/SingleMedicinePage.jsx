@@ -1,9 +1,10 @@
 import React from "react";
+import { SingleMedicineModule } from "../modules/SingleMedicineModule";
 
 const SingleMedicinePage = () => {
     return (
         <>
-            Single Medicine Page
+            <SingleMedicineModule />
         </>
     );
 };

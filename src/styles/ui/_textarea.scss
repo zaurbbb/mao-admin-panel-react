@@ -5,6 +5,7 @@
 
 .textarea {
     width: 100%;
+    max-width: $input-max-width;
     height: $fs-xxxlarge;
 
     border: none;

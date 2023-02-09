@@ -15,7 +15,7 @@ import { useAppSelector } from "./hooks/useAppSelector";
 
 import SidebarComponent from "./components/SidebarComponent";
 import SnackbarComponent from "./components/SnackbarComponent";
-import Loader from "./loader/Loader";
+import Loader from "./Loader";
 
 const LazyAppRouter = React.lazy(() => import("./AppRouter"));
 const App = () => {

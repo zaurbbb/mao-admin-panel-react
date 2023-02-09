@@ -49,15 +49,14 @@ $footer-color: $primary-dark-color;
 $input-background-color: $white-color-1;
 $input-border-color: $gray-color-2;
 $input-placeholder-color: $gray-color-2;
-// body
-$body-background: $gray-color-1;
+$input-max-width: 62rem;
+
 // badge - pill
 $webkit-bg: rgba($primary-dark-color, .8);
-// footer
-$footer-bg: $primary-dark-color;
+
 //table
 $table-column-short: $fs-xlarge;
-$table-column-regular: 10rem;
+$table-column-regular: 15rem;
 $table-column-long: 18rem;
 //table
 $table-column-regular: 12rem;

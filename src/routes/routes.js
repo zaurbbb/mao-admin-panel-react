@@ -29,6 +29,10 @@ export const privateRoutes = [
     {path: "/createUser", component: <CreateUserPage />, id: 6},
     {path: "/createMedicine", component: <CreateMedicinePage />, id: 7},
     {path: "/createPost", component: <CreatePostPage />, id: 7},
+
+    {path: "/editUser", component: <CreateUserPage />, id: 8},
+    {path: "/editMedicine", component: <CreateMedicinePage />, id: 9},
+    {path: "/editPost", component: <CreatePostPage />, id: 10},
 ];
 
 export const publicRoutes = [

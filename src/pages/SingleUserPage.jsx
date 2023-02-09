@@ -1,9 +1,10 @@
 import React from "react";
+import { SingleUserModule } from "../modules/SingleUserModule";
 
 const SingleUserPage = () => {
     return (
         <>
-            Single User Page
+            <SingleUserModule />
         </>
     );
 };

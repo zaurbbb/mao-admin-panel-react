@@ -4,23 +4,34 @@
 */
 
 .form {
+    &--create-user {
+        @extend .form;
+        grid-template-columns: 1fr 1fr;
+    }
     &--create-medicine {
         @extend .form;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr!important;
     }
+    &--create-post {
+        @extend .form;
+        grid-template-columns: 1fr;
+    }
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
     justify-content: flex-start;
     align-items: flex-end;
     column-gap: $fs-medium;
     row-gap: $fs-regular;
 
-    width: 100%;
 
     font-size: $fs-small;
     &__element {
         display: flex;
         flex-direction: column;
         gap: $fs-xsmall;
+
+        &:last-child {
+            align-items: flex-start;
+        }
     }
 }

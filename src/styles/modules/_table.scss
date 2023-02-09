@@ -53,8 +53,13 @@
     }
 }
 
-
 .medicines-table {
+    .table__column {
+        width: $table-column-long;
+    }
+}
+
+.posts-table {
     .table__column {
         width: $table-column-long;
     }

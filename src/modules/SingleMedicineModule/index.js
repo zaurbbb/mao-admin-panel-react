@@ -1,0 +1,1 @@
+export {default as SingleMedicineModule} from "./components/SingleMedicineModule";

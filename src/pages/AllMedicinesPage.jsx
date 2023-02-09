@@ -1,10 +1,10 @@
 import React from "react";
-import { MedicinesTableModule } from "../modules/MedicinesTableModule";
+import { ReadMedicinesModule } from "../modules/ReadMedicinesModule";
 
 const AllMedicinesPage = () => {
     return (
         <>
-            <MedicinesTableModule />
+            <ReadMedicinesModule />
         </>
     );
 };
